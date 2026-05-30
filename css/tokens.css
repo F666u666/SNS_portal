@@ -1,0 +1,194 @@
+/* ============================================================
+   Design Tokens
+   - Color, typography, spacing, radius, shadow, motion, z-index
+   - Theme variants applied via [data-theme="..."] on <body>
+   ============================================================ */
+
+:root {
+  /* ── Color: Light (Sage) — default ── */
+  --c-bg:        #F3F5F2;
+  --c-bg-2:      #E9EDE7;
+  --c-bg-3:      #DCE3DA;
+  --c-surface:   #FFFFFF;
+  --c-border:    #D0D8CE;
+  --c-border-2: #B0BCB0;
+  --c-ink:       #1A1F1A;
+  --c-ink-2:     #2C322C;
+  --c-mid-1:     #4A544A;
+  --c-mid-2:     #6A746A;
+  --c-mid-3:     #7A847A;
+
+  --c-accent:        #7A9E7E;
+  --c-accent-strong: #5D8163;
+  --c-accent-soft:   rgba(122,158,126,0.12);
+  --c-accent-border: rgba(122,158,126,0.35);
+
+  --c-warn:    #C58B5C;
+  --c-danger:  #B25A57;
+  --c-info:    #6E8AA8;
+  --c-success: #5D8163;
+
+  /* ── Typography ── */
+  --font-serif-en: "Cormorant Garamond", "Shippori Mincho", serif;
+  --font-serif-jp: "Shippori Mincho", "Cormorant Garamond", serif;
+  --font-sans-jp:  "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
+
+  --fs-xs:   12px;
+  --fs-sm:   13px;
+  --fs-base: 15px;
+  --fs-md:   16px;
+  --fs-lg:   18px;
+  --fs-xl:   22px;
+  --fs-2xl:  28px;
+  --fs-3xl:  36px;
+  --fs-4xl:  48px;
+
+  --lh-tight: 1.25;
+  --lh-snug:  1.4;
+  --lh-base:  1.65;
+  --lh-loose: 1.9;
+
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* ── Spacing (4px base) ── */
+  --sp-0:  0;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-7:  32px;
+  --sp-8:  40px;
+  --sp-9:  56px;
+  --sp-10: 72px;
+  --sp-11: 96px;
+
+  /* ── Radius ── */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ── Shadow ── */
+  --shadow-1: 0 1px 2px rgba(28,38,28,0.04), 0 1px 1px rgba(28,38,28,0.03);
+  --shadow-2: 0 4px 12px rgba(28,38,28,0.06), 0 2px 4px rgba(28,38,28,0.04);
+  --shadow-3: 0 10px 28px rgba(28,38,28,0.10), 0 4px 10px rgba(28,38,28,0.06);
+  --shadow-pop: 0 18px 48px rgba(28,38,28,0.18), 0 6px 16px rgba(28,38,28,0.10);
+
+  /* ── Motion ── */
+  --ease-out:  cubic-bezier(.2,.7,.2,1);
+  --ease-in:   cubic-bezier(.6,.05,.6,.4);
+  --ease-io:   cubic-bezier(.5,.02,.3,1);
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 340ms;
+  --dur-4: 520ms;
+
+  /* ── Layout ── */
+  --layout-max:    980px;
+  --tabbar-h:      68px;
+  --header-h:      64px;
+  --safe-bottom:   env(safe-area-inset-bottom, 0px);
+  --safe-top:      env(safe-area-inset-top, 0px);
+
+  /* ── Z-index scale ── */
+  --z-base:    0;
+  --z-sticky:  10;
+  --z-tabbar:  40;
+  --z-modal:   60;
+  --z-toast:   80;
+
+  color-scheme: light;
+}
+
+/* ── Theme: Dark ── */
+[data-theme="dark"] {
+  --c-bg:        #111113;
+  --c-bg-2:      #1B1B1E;
+  --c-bg-3:      #232327;
+  --c-surface:   #1C1C1F;
+  --c-border:    #2C2C30;
+  --c-border-2: #3D3D43;
+  --c-ink:       #F0EDE8;
+  --c-ink-2:     #D8D4CE;
+  --c-mid-1:     #B0ACA6;
+  --c-mid-2:     #8A8680;
+  --c-mid-3:     #66625E;
+
+  --c-accent:        #C09A94;
+  --c-accent-strong: #A07870;
+  --c-accent-soft:   rgba(192,154,148,0.15);
+  --c-accent-border: rgba(192,154,148,0.32);
+
+  --c-warn:    #D9A276;
+  --c-danger:  #C4716E;
+  --c-info:    #8AA6C0;
+  --c-success: #9CBFA1;
+
+  color-scheme: dark;
+}
+
+/* ── Theme: Ink (mono) ── */
+[data-theme="ink"] {
+  --c-bg:        #FAFAF8;
+  --c-bg-2:      #F1F1ED;
+  --c-bg-3:      #E5E5DF;
+  --c-surface:   #FFFFFF;
+  --c-border:    #DCDCD6;
+  --c-border-2: #B8B8B0;
+  --c-ink:       #0E0E0C;
+  --c-ink-2:     #1F1F1B;
+  --c-mid-1:     #3F3F39;
+  --c-mid-2:     #696960;
+  --c-mid-3:     #8E8E84;
+  --c-accent:        #0E0E0C;
+  --c-accent-strong: #000000;
+  --c-accent-soft:   rgba(14,14,12,0.06);
+  --c-accent-border: rgba(14,14,12,0.20);
+}
+
+/* ── Theme: Rose (warm) ── */
+[data-theme="rose"] {
+  --c-bg:        #F8F2EE;
+  --c-bg-2:      #F0E6DF;
+  --c-bg-3:      #E5D6CC;
+  --c-surface:   #FFFFFF;
+  --c-border:    #DDC9BE;
+  --c-border-2: #C5A899;
+  --c-ink:       #2A1F1B;
+  --c-ink-2:     #3E2C26;
+  --c-mid-1:     #5E443B;
+  --c-mid-2:     #826758;
+  --c-mid-3:     #A48978;
+  --c-accent:        #B5736B;
+  --c-accent-strong: #8E544E;
+  --c-accent-soft:   rgba(181,115,107,0.12);
+  --c-accent-border: rgba(181,115,107,0.32);
+}
+
+/* Respect user OS preference if no explicit theme stored yet */
+@media (prefers-color-scheme: dark) {
+  body[data-theme="auto"] {
+    --c-bg: #111113;
+    --c-surface: #1C1C1F;
+    --c-ink: #F0EDE8;
+    color-scheme: dark;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-1: 0ms;
+    --dur-2: 0ms;
+    --dur-3: 0ms;
+    --dur-4: 0ms;
+  }
+}

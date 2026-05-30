@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <rect width="192" height="192" rx="42" fill="#7A9E7E"/>
+  <rect x="14" y="14" width="164" height="164" rx="34" fill="#F3F5F2"/>
+  <text x="96" y="78" text-anchor="middle" font-family="Cormorant Garamond, Shippori Mincho, serif" font-style="italic" font-size="14" letter-spacing="3" fill="#5D8163">YOUR · ROADMAP</text>
+  <text x="96" y="124" text-anchor="middle" font-family="Shippori Mincho, serif" font-weight="700" font-size="56" fill="#1A1F1A">SNS</text>
+  <text x="96" y="158" text-anchor="middle" font-family="Shippori Mincho, serif" font-weight="500" font-size="22" fill="#5D8163">運 用</text>
+</svg>

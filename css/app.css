@@ -1,0 +1,179 @@
+/* ============================================================
+   App Layout — Header / Main / Tabbar / View shell
+   ============================================================ */
+
+/* ── Header ── */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: color-mix(in srgb, var(--c-bg) 85%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid var(--c-border);
+  padding-top: var(--safe-top);
+}
+.app-header__inner {
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  height: var(--header-h);
+  padding: 0 var(--sp-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+.app-header__brand { display: flex; flex-direction: column; gap: 2px; }
+.app-header__actions { display: flex; gap: 4px; }
+
+.brand-eyebrow {
+  font-family: var(--font-serif-en);
+  font-size: 10px;
+  font-style: italic;
+  letter-spacing: 0.42em;
+  color: var(--c-mid-2);
+}
+.brand-title {
+  font-family: var(--font-serif-jp);
+  font-size: 20px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.03em;
+  color: var(--c-ink);
+  line-height: 1;
+}
+.brand-title__sub {
+  font-weight: var(--fw-regular);
+  color: var(--c-accent-strong);
+  margin-left: 2px;
+}
+
+/* ── Main ── */
+.app-main {
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  padding: var(--sp-5) var(--sp-5) var(--sp-7);
+  min-height: calc(100dvh - var(--header-h) - var(--tabbar-h) - 32px);
+}
+
+.view-root { min-height: 200px; }
+
+.boot-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-10) var(--sp-4);
+  text-align: center;
+}
+.boot-placeholder__label {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  letter-spacing: 0.32em;
+  color: var(--c-mid-2);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.boot-placeholder__hint { color: var(--c-mid-1); font-size: var(--fs-sm); }
+
+/* ── View transitions ── */
+.view {
+  animation: view-in var(--dur-3) var(--ease-out);
+}
+@keyframes view-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Home hero */
+.home-hero { margin-bottom: var(--sp-6); }
+.home-hero__title {
+  font-family: var(--font-serif-jp);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+  margin-top: 6px;
+  line-height: var(--lh-tight);
+}
+.home-hero__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Section container */
+.section { margin-bottom: var(--sp-8); }
+.section__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: var(--sp-4);
+}
+.section__title { font-size: var(--fs-xl); }
+.section__action { font-size: var(--fs-sm); color: var(--c-accent-strong); }
+
+/* ── Bottom Tabbar ── */
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-tabbar);
+  background: color-mix(in srgb, var(--c-surface) 92%, transparent);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-top: 1px solid var(--c-border);
+  padding-bottom: var(--safe-bottom);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: calc(var(--tabbar-h) + var(--safe-bottom));
+  align-items: stretch;
+}
+.tabbar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--c-mid-2);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  padding: 6px 0 calc(6px + var(--safe-bottom));
+  position: relative;
+  transition: color var(--dur-1) var(--ease-out);
+  font-weight: var(--fw-medium);
+}
+.tabbar__item:hover { color: var(--c-ink); }
+.tabbar__icon { transition: transform var(--dur-2) var(--ease-out); }
+.tabbar__item[aria-current="page"] {
+  color: var(--c-accent-strong);
+}
+.tabbar__item[aria-current="page"] .tabbar__icon {
+  transform: translateY(-1px);
+}
+.tabbar__item[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 2px;
+  background: var(--c-accent);
+  border-radius: 0 0 var(--r-pill) var(--r-pill);
+}
+.tabbar__label { font-family: var(--font-sans-jp); }
+
+/* Narrow phones — slightly shrink */
+@media (max-width: 360px) {
+  .tabbar__label { font-size: 9.5px; }
+  .tabbar__icon { width: 20px; height: 20px; }
+  .brand-title { font-size: 18px; }
+}
+
+/* Larger screens — let main breathe */
+@media (min-width: 720px) {
+  .app-main { padding-left: var(--sp-7); padding-right: var(--sp-7); }
+}
