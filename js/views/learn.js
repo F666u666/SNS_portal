@@ -3,7 +3,7 @@
 // ============================================================
 
 import { PHASES, CHAPTERS, CHAPTER_BODIES, chaptersByPhase, getChapter, nextChapter, getPhase } from '../curriculum.js';
-import { reads, todos, notes } from '../models.js';
+import { reads } from '../models.js';
 import { h, toast } from '../ui.js';
 
 export function renderLearnIndex() {
@@ -75,10 +75,6 @@ export function renderChapter(chapterId) {
         h('span', { class: 'chapter-intro__label' }, ['この章で']),
         h('span', { class: 'chapter-intro__value', html: `<strong>${c.title}</strong> の核を1章で掴む。` }),
       ]),
-      c.suggestedTodos && c.suggestedTodos.length ? h('div', { class: 'chapter-intro__row' }, [
-        h('span', { class: 'chapter-intro__label' }, ['次のTODO']),
-        h('span', { class: 'chapter-intro__value' }, [c.suggestedTodos[0]]),
-      ]) : null,
       h('div', { class: 'chapter-intro__row' }, [
         h('span', { class: 'chapter-intro__label' }, ['読了目安']),
         h('span', { class: 'chapter-intro__value' }, [`${c.estMin} 分`]),
@@ -89,33 +85,8 @@ export function renderChapter(chapterId) {
     CHAPTER_BODIES[c.id]
       ? h('article', { class: 'prose', style: { marginTop: '20px' }, html: CHAPTER_BODIES[c.id] })
       : h('div', { class: 'card card--soft', style: { marginTop: '20px' } }, [
-          h('p', { class: 'card__lede' }, ['この章の本文は順次移行中です。']),
-          h('p', { class: 'card__lede', style: { marginTop: '8px' } }, ['いまは「読了マーク」「TODO追加」「メモ」が動きます。']),
+          h('p', { class: 'card__lede' }, ['この章の本文は準備中です。']),
         ]),
-
-    // Suggested TODOs
-    c.suggestedTodos && c.suggestedTodos.length ? h('section', { class: 'section', style: { marginTop: '24px' } }, [
-      h('h3', { class: 'card__title', style: { marginBottom: '10px' } }, ['この章を読んだら次にやること']),
-      ...c.suggestedTodos.map(text => h('button', {
-        type: 'button',
-        class: 'list-row',
-        style: { width: '100%', textAlign: 'left', cursor: 'pointer' },
-        onclick: () => {
-          todos.add({ text, source: 'chapter', sourceRef: c.id, focused: false });
-          toast('TODOに追加しました');
-        },
-      }, [
-        h('span', { html: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M12 5v14"/></svg>', style: { color: 'var(--c-accent-strong)' } }),
-        h('span', { style: { flex: '1' } }, [text]),
-        h('span', { class: 'badge badge--accent' }, ['TODOに追加']),
-      ])),
-    ]) : null,
-
-    // Quick note
-    h('section', { class: 'section', style: { marginTop: '24px' } }, [
-      h('h3', { class: 'card__title', style: { marginBottom: '10px' } }, ['この章のメモ']),
-      renderQuickNote(c.id),
-    ]),
 
     // Done toggle
     h('section', { class: 'section', style: { marginTop: '24px' } }, [
@@ -146,40 +117,4 @@ export function renderChapter(chapterId) {
   });
 
   return view;
-}
-
-function renderQuickNote(chapterId) {
-  const existing = notes.all().filter(n => n.chapterRef === chapterId);
-  const ta = h('textarea', { class: 'textarea', placeholder: 'メモを書いて保存…', maxlength: 4000 });
-  const saveBtn = h('button', {
-    type: 'button',
-    class: 'btn btn--sm',
-    onclick: () => {
-      if (!ta.value.trim()) return;
-      notes.add({ text: ta.value, chapterRef: chapterId, tags: ['章メモ'] });
-      ta.value = '';
-      toast('メモを保存');
-      list.replaceWith(renderList());
-    },
-  }, ['保存']);
-
-  function renderList() {
-    const cur = notes.all().filter(n => n.chapterRef === chapterId);
-    if (!cur.length) return h('p', { class: 'card__lede', style: { marginTop: '12px' } }, ['まだメモはありません']);
-    return h('div', { style: { marginTop: '12px' } },
-      cur.map(n => h('div', { class: 'card card--soft', style: { marginBottom: '8px' } }, [
-        h('p', { style: { whiteSpace: 'pre-wrap' } }, [n.text]),
-        h('p', { class: 'card__lede', style: { marginTop: '6px', fontSize: '12px' } }, [
-          new Date(n.createdAt).toLocaleString('ja-JP', { dateStyle: 'short', timeStyle: 'short' }),
-        ]),
-      ]))
-    );
-  }
-  const list = renderList();
-
-  return h('div', {}, [
-    ta,
-    h('div', { style: { display: 'flex', justifyContent: 'flex-end', marginTop: '8px' } }, [saveBtn]),
-    list,
-  ]);
 }

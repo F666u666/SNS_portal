@@ -7,8 +7,6 @@ import { router } from './router.js';
 import { $, $$, h, escapeHtml, toast, openModal } from './ui.js';
 import { mountHome } from './views/home.js';
 import { renderLearnIndex, renderChapter } from './views/learn.js';
-import { mountTodo } from './views/todo.js';
-import { mountNotes } from './views/notes.js';
 
 // ── Theme apply ──
 function applyTheme() {
@@ -166,7 +164,7 @@ function viewSettings(root) {
     h('section', { class: 'section' }, [
       h('h3', { class: 'card__title', style: { marginBottom: '10px', color: 'var(--c-danger)' } }, ['危険ゾーン']),
       h('div', { class: 'card' }, [
-        h('p', { class: 'card__lede' }, ['学習履歴・TODO・ノートを全て削除します。事前にJSONエクスポートしてください。']),
+        h('p', { class: 'card__lede' }, ['学習の進捗（読了マーク）を全て削除します。事前にJSONエクスポートしてください。']),
         h('button', { type: 'button', class: 'btn btn--danger btn--sm', style: { marginTop: '12px' }, onclick: confirmWipe }, ['全データを削除']),
       ]),
     ]),
@@ -178,23 +176,13 @@ function renderDataCard() {
   const user = storage.getUser();
   const data = storage.getData(user.id);
   const counts = {
-    todos: (data.todos || []).length,
-    notes: (data.notes || []).length,
     reads: Object.keys(data.reads || {}).length,
   };
   return h('div', { class: 'card' }, [
-    h('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '8px', marginBottom: '14px' } }, [
+    h('div', { style: { marginBottom: '14px' } }, [
       h('div', { class: 'stat', style: { padding: '10px' } }, [
-        h('span', { class: 'stat__label' }, ['TODO']),
-        h('div', { class: 'stat__value', style: { fontSize: 'var(--fs-xl)' } }, [String(counts.todos)]),
-      ]),
-      h('div', { class: 'stat', style: { padding: '10px' } }, [
-        h('span', { class: 'stat__label' }, ['NOTES']),
-        h('div', { class: 'stat__value', style: { fontSize: 'var(--fs-xl)' } }, [String(counts.notes)]),
-      ]),
-      h('div', { class: 'stat', style: { padding: '10px' } }, [
-        h('span', { class: 'stat__label' }, ['READS']),
-        h('div', { class: 'stat__value', style: { fontSize: 'var(--fs-xl)' } }, [String(counts.reads)]),
+        h('span', { class: 'stat__label' }, ['読了した章']),
+        h('div', { class: 'stat__value', style: { fontSize: 'var(--fs-xl)' } }, [`${String(counts.reads)} 章`]),
       ]),
     ]),
     h('div', { style: { display: 'flex', flexDirection: 'column', gap: '8px' } }, [
@@ -375,8 +363,6 @@ async function boot() {
     .on('/home',  () => { setActiveTab('home');  renderInto(mountHome); })
     .on('/learn', () => { setActiveTab('learn'); renderInto((r) => r.appendChild(renderLearnIndex())); })
     .on('/learn/:chapterId', ({ chapterId }) => { setActiveTab('learn'); renderInto((r) => r.appendChild(renderChapter(chapterId))); })
-    .on('/todo',  () => { setActiveTab('todo');  renderInto(mountTodo); })
-    .on('/notes', () => { setActiveTab('notes'); renderInto(mountNotes); })
     .on('/settings', () => { setActiveTab('settings'); renderInto(viewSettings); })
     .fallback((path) => { setActiveTab('home'); renderInto((r) => r.appendChild(h('section', { class: 'view' }, [
       h('h2', { class: 'section__title' }, ['ページが見つかりません']),

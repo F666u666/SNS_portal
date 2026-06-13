@@ -1,18 +1,15 @@
 // ============================================================
-// View: Home — 今日のフォーカス / Streak / 次の章 / 進捗
+// View: Home — あいさつ / 進捗 / 続きを読む
 // ============================================================
 
 import { storage } from '../storage.js';
-import { todos, reads } from '../models.js';
+import { reads } from '../models.js';
 import { CHAPTERS, getChapter, nextChapter } from '../curriculum.js';
-import { h, escapeHtml, toast } from '../ui.js';
+import { h, escapeHtml } from '../ui.js';
 
 export function renderHome() {
   const user = storage.getUser();
   const meta = storage.getMeta(user.id);
-  const focus = todos.todaysFocus();
-  const open = todos.openCount();
-  const doneToday = todos.doneTodayCount();
 
   // resume target
   const last = reads.lastChapter();
@@ -28,7 +25,7 @@ export function renderHome() {
   return h('section', { class: 'view' }, [
     // Greeting
     h('header', { class: 'home-hero' }, [
-      h('p', { class: 'eyebrow' }, ['YOUR PERSONAL ROADMAP']),
+      h('p', { class: 'eyebrow' }, ['SNS収益化 教材']),
       h('h2', { class: 'home-hero__title' }, [`こんにちは、${escapeHtml(user.name)} さん`]),
       h('div', { class: 'home-hero__meta' }, [
         h('span', { class: 'streak' }, [
@@ -37,15 +34,6 @@ export function renderHome() {
         ]),
         h('span', { class: 'badge' }, [`ベスト ${meta.bestStreak || 0} 日`]),
       ]),
-    ]),
-
-    // Today's focus
-    h('section', { class: 'section' }, [
-      h('div', { class: 'section__head' }, [
-        h('h3', { class: 'section__title' }, ['今日やる3つ']),
-        h('a', { class: 'section__action', href: '#/todo' }, ['全部見る →']),
-      ]),
-      renderFocusList(focus),
     ]),
 
     // Stats
@@ -60,12 +48,12 @@ export function renderHome() {
           h('span', { class: 'stat__hint' }, ['毎日開くと加算']),
         ]),
         h('div', { class: 'stat' }, [
-          h('span', { class: 'stat__label' }, ['TODAY']),
+          h('span', { class: 'stat__label' }, ['READ']),
           h('div', {}, [
-            h('span', { class: 'stat__value' }, [String(doneToday)]),
-            h('span', { class: 'stat__unit' }, [`/ ${doneToday + focus.filter(f => f.status === 'open').length || open}`]),
+            h('span', { class: 'stat__value' }, [String(doneCh)]),
+            h('span', { class: 'stat__unit' }, ['章']),
           ]),
-          h('span', { class: 'stat__hint' }, ['今日の完了数']),
+          h('span', { class: 'stat__hint' }, ['読了した章']),
         ]),
         h('div', { class: 'stat' }, [
           h('span', { class: 'stat__label' }, ['LEARN']),
@@ -84,14 +72,14 @@ export function renderHome() {
     // Continue from
     h('section', { class: 'section' }, [
       h('div', { class: 'section__head' }, [
-        h('h3', { class: 'section__title' }, ['次のひと粒']),
-        h('a', { class: 'section__action', href: '#/learn' }, ['学習を見る →']),
+        h('h3', { class: 'section__title' }, ['続きを読む']),
+        h('a', { class: 'section__action', href: '#/learn' }, ['全章を見る →']),
       ]),
       resumeTarget
         ? renderChapterCard(resumeTarget, true)
         : h('div', { class: 'empty' }, [
             h('p', { class: 'empty__title' }, ['全章コンプリート']),
-            h('p', { class: 'empty__hint' }, ['ノートを見返したり、TODOを進めましょう']),
+            h('p', { class: 'empty__hint' }, ['お疲れさま。気になる章を読み返そう']),
           ]),
     ]),
   ]);
@@ -99,33 +87,6 @@ export function renderHome() {
 
 function firstUnreadChapter() {
   return CHAPTERS.find(c => !reads.isDone(c.id)) || null;
-}
-
-function renderFocusList(focus) {
-  if (!focus.length) {
-    return h('div', { class: 'empty' }, [
-      h('span', { class: 'empty__icon', html: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M12 5v14"/></svg>' }),
-      h('p', { class: 'empty__title' }, ['今日のフォーカスを決めよう']),
-      h('p', { class: 'empty__hint' }, ['TODOから最大3つ「★」で固定できます']),
-      h('a', { class: 'btn btn--secondary btn--sm', href: '#/todo', style: { marginTop: '12px' } }, ['TODOへ']),
-    ]);
-  }
-  const wrap = h('div', {});
-  focus.forEach(t => {
-    const row = h('div', { class: `focus-row ${t.status === 'done' ? 'focus-row--done' : ''}` }, [
-      h('label', { class: 'check' }, [
-        h('input', { type: 'checkbox', checked: t.status === 'done', onchange: () => { todos.toggle(t.id); refreshHome(); } }),
-        h('span', { class: 'check__box', html: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-11"/></svg>' }),
-      ]),
-      h('span', { class: 'focus-row__text' }, [t.text]),
-      t.sourceRef ? h('a', { class: 'badge', href: `#/learn/${t.sourceRef}` }, ['章へ']) : null,
-      h('button', { type: 'button', class: 'focus-row__remove', 'aria-label': 'フォーカスから外す', onclick: () => { todos.toggleFocus(t.id); refreshHome(); } },
-        [h('span', { html: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>' })]
-      ),
-    ]);
-    wrap.appendChild(row);
-  });
-  return wrap;
 }
 
 function renderChapterCard(c, isResume = false) {
@@ -144,14 +105,8 @@ function renderChapterCard(c, isResume = false) {
   ]);
 }
 
-let lastMount = null;
 export function mountHome(viewRoot) {
   viewRoot.innerHTML = '';
   const el = renderHome();
   viewRoot.appendChild(el);
-  lastMount = viewRoot;
-}
-function refreshHome() {
-  if (!lastMount) return;
-  mountHome(lastMount);
 }
