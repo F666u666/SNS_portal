@@ -5,32 +5,32 @@
    ============================================================ */
 
 :root {
-  /* ── Color: Light (Sage) — default ── */
-  --c-bg:        #F3F5F2;
-  --c-bg-2:      #E9EDE7;
-  --c-bg-3:      #DCE3DA;
+  /* ── Color: Light (Launch Blue) — default ── */
+  --c-bg:        #F4F7FB;
+  --c-bg-2:      #E9F0F8;
+  --c-bg-3:      #DBE7F3;
   --c-surface:   #FFFFFF;
-  --c-border:    #D0D8CE;
-  --c-border-2: #B0BCB0;
-  --c-ink:       #1A1F1A;
-  --c-ink-2:     #2C322C;
-  --c-mid-1:     #4A544A;
-  --c-mid-2:     #6A746A;
-  --c-mid-3:     #7A847A;
+  --c-border:    #D5E0EE;
+  --c-border-2: #B4C5DA;
+  --c-ink:       #1B2733;
+  --c-ink-2:     #2D3748;
+  --c-mid-1:     #45556A;
+  --c-mid-2:     #6B7A8D;
+  --c-mid-3:     #8696A8;
 
-  --c-accent:        #7A9E7E;
-  --c-accent-strong: #5D8163;
-  --c-accent-soft:   rgba(122,158,126,0.12);
-  --c-accent-border: rgba(122,158,126,0.35);
+  --c-accent:        #2B6CB0;
+  --c-accent-strong: #1E4E7E;
+  --c-accent-soft:   rgba(43,108,176,0.10);
+  --c-accent-border: rgba(43,108,176,0.30);
 
-  --c-warn:    #C58B5C;
-  --c-danger:  #B25A57;
-  --c-info:    #6E8AA8;
-  --c-success: #5D8163;
+  --c-warn:    #B7791F;
+  --c-danger:  #C0392B;
+  --c-info:    #2B6CB0;
+  --c-success: #2F855A;
 
-  /* ── Typography ── */
-  --font-serif-en: "Cormorant Garamond", "Shippori Mincho", serif;
-  --font-serif-jp: "Shippori Mincho", "Cormorant Garamond", serif;
+  /* ── Typography (sans — Launch style) ── */
+  --font-serif-en: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  --font-serif-jp: "Hiragino Kaku Gothic ProN", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans-jp:  "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif;
 
   --fs-xs:   12px;

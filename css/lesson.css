@@ -1,0 +1,105 @@
+/* ============================================================
+   Lesson — Launch-style chapter body components
+   Scoped under .lesson so it fully overrides .prose defaults.
+   Linked AFTER components.css in index.html.
+   ============================================================ */
+
+.lesson{
+  --navy:#1e4e7e; --blue:#2b6cb0; --blue2:#5b8bc0; --blue3:#9cb8d6;
+  --blue4:#cdddec; --blue5:#eaf1f8;
+  --ink:#2d3748; --muted:#718096; --line:#cbd5e0;
+  --accent:#b83280; --ng:#c0392b; --ngbg:#fdf3f2;
+  --exbg:#f1f8f4; --ex:#2f855a; --gold:#b7791f; --goldbg:#fffaf0;
+  color:var(--ink); line-height:1.85; font-size:15px;
+  font-family:-apple-system,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+}
+
+/* reset .prose decorations inside lesson */
+.lesson > * + *{ margin-top:0; }
+.lesson p{ margin:8px 0; line-height:1.85; }
+.lesson ul,.lesson ol{ padding-left:20px; margin:8px 0; }
+.lesson ul{ list-style:disc; }
+.lesson ul > li{ margin:4px 0; padding-left:0; }
+.lesson ul > li::before{ content:none; }
+.lesson ol > li{ margin:4px 0; padding-left:0; }
+.lesson li{ margin:4px 0; }
+.lesson strong{ color:var(--accent); font-weight:700; }
+.lesson em{ font-style:normal; color:var(--navy); font-weight:600; }
+
+/* intro hero (optional, body-level) */
+.lesson .hero{ background:linear-gradient(160deg,#1e4e7e,#2b6cb0); color:#fff; padding:24px 18px; border-radius:14px; margin-bottom:16px; }
+.lesson .hero .tag{ display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.3); border-radius:30px; padding:4px 14px; font-size:12px; font-weight:bold; letter-spacing:1px; }
+.lesson .hero h1{ font-size:22px; margin:12px 0 0; line-height:1.35; color:#fff; }
+.lesson .hero .sub{ font-size:13px; opacity:.92; margin-top:10px; }
+
+/* "what you'll learn" box */
+.lesson .what{ background:var(--blue5); border:1px solid var(--blue4); border-radius:12px; padding:14px 16px; margin:14px 0; }
+.lesson .what .h{ font-weight:bold; color:var(--navy); margin-bottom:6px; }
+.lesson .what ul{ margin:0; padding-left:18px; }
+.lesson .what li{ margin:3px 0; font-size:14px; }
+
+/* headings */
+.lesson h2{ font-size:18px; color:#fff; background:var(--navy); border-radius:9px; padding:9px 13px; margin:30px 0 12px; border:0; font-weight:700; }
+.lesson h2 .s{ display:inline-block; background:#fff; color:var(--navy); border-radius:6px; padding:0 8px; font-size:15px; margin-right:8px; font-weight:bold; }
+.lesson h3{ font-size:15.5px; color:var(--navy); margin:18px 0 7px; border-bottom:2px solid var(--blue4); border-top:0; padding:0 0 4px; font-weight:700; }
+.lesson h4{ font-size:14px; color:var(--blue); margin:14px 0 4px; border:0; padding:0; font-weight:700; }
+
+/* callouts */
+.lesson .key{ background:var(--blue5); border-left:5px solid var(--blue); padding:11px 14px; border-radius:0 8px 8px 0; margin:12px 0; }
+.lesson .warn{ background:var(--ngbg); border-left:5px solid var(--ng); padding:11px 14px; border-radius:0 8px 8px 0; margin:12px 0; }
+.lesson .good{ background:var(--exbg); border-left:4px solid var(--ex); border-radius:0 8px 8px 0; padding:9px 13px; margin:8px 0; }
+.lesson .good b{ color:var(--ex); }
+.lesson .bad{ background:var(--ngbg); border-left:4px solid var(--ng); border-radius:0 8px 8px 0; padding:9px 13px; margin:8px 0; }
+.lesson .bad b{ color:var(--ng); }
+
+/* vs (compare two columns/blocks) */
+.lesson .vs .l,.lesson .vs .r{ border-radius:10px; padding:11px 14px; margin:8px 0; font-size:14px; }
+.lesson .vs .l{ background:#f6f6f7; border:1px solid var(--line); }
+.lesson .vs .r{ background:var(--blue5); border:1px solid var(--blue4); }
+.lesson .vs .t{ font-weight:bold; margin-bottom:5px; }
+.lesson .vs .l .t{ color:var(--muted); }
+.lesson .vs .r .t{ color:var(--navy); }
+
+/* figure box */
+.lesson .fig{ background:#fbfcfe; border:1px solid var(--line); border-radius:12px; padding:14px; margin:12px 0; }
+
+/* timeline */
+.lesson .tl{ display:flex; flex-direction:column; gap:7px; }
+.lesson .tl .slot{ display:flex; gap:9px; align-items:flex-start; }
+.lesson .tl .time{ flex:0 0 auto; min-width:56px; font-weight:bold; color:#fff; background:var(--blue); border-radius:6px; padding:4px 6px; text-align:center; font-size:12px; }
+.lesson .tl .w2{ font-size:13.5px; }
+.lesson .tag2{ display:inline-block; background:var(--blue5); color:var(--navy); border-radius:5px; padding:1px 7px; font-size:11px; font-weight:bold; margin-right:4px; }
+
+/* type-card */
+.lesson .tc{ border:1px solid var(--line); border-radius:11px; margin:10px 0; overflow:hidden; }
+.lesson .tc .hd{ background:var(--blue); color:#fff; padding:8px 13px; font-weight:bold; font-size:14px; }
+.lesson .tc .bd{ padding:10px 13px; }
+.lesson .tc .lab{ font-weight:bold; color:var(--navy); font-size:13px; }
+
+/* grouped rules */
+.lesson .grp{ border:1px solid var(--blue4); border-radius:11px; margin:12px 0; overflow:hidden; }
+.lesson .grp .gh{ background:var(--blue5); color:var(--navy); font-weight:bold; padding:8px 13px; font-size:14.5px; border-bottom:1px solid var(--blue4); }
+.lesson .grp .gb{ padding:8px 13px; }
+.lesson .rule{ padding:7px 0; border-bottom:1px dashed var(--blue4); font-size:13.5px; }
+.lesson .rule:last-child{ border:none; }
+.lesson .rule .rn{ font-weight:bold; color:var(--blue); }
+.lesson .rule .gb2{ color:var(--muted); font-size:12.5px; display:block; margin-top:2px; }
+
+/* table */
+.lesson table{ border-collapse:collapse; width:100%; margin:9px 0; font-size:13px; }
+.lesson th,.lesson td{ border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+.lesson th{ background:var(--blue); color:#fff; }
+
+/* steps */
+.lesson .step{ border-left:4px solid var(--blue); background:#fbfcfe; border-radius:0 10px 10px 0; padding:9px 13px; margin:9px 0; }
+.lesson .step .sn{ display:inline-block; background:var(--blue); color:#fff; font-weight:bold; border-radius:6px; padding:0 8px; font-size:12px; margin-right:6px; }
+.lesson .step .snm{ font-weight:bold; color:var(--navy); }
+
+/* drafts / final / check / note / end */
+.lesson .draft{ background:#f6f6f7; border:1px solid var(--line); border-radius:8px; padding:9px 12px; margin:7px 0; font-size:13.5px; }
+.lesson .final{ background:var(--goldbg); border:1px solid #f0d9a8; border-radius:10px; padding:12px 14px; margin:10px 0; font-size:13.5px; line-height:1.9; }
+.lesson .check{ background:var(--blue5); border-radius:11px; padding:12px 16px; margin:10px 0; }
+.lesson .check li{ margin:5px 0; font-size:13.5px; }
+.lesson .note{ color:var(--muted); font-size:12.5px; }
+.lesson .end{ text-align:center; background:var(--navy); color:#fff; border-radius:12px; padding:16px; margin-top:18px; font-size:14.5px; }
+.lesson .end b{ color:#fff; }
