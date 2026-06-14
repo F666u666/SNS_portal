@@ -6,7 +6,7 @@ import { storage, migrateLegacyIfNeeded } from './storage.js';
 import { router } from './router.js';
 import { $, $$, h, escapeHtml, toast, openModal } from './ui.js';
 import { mountHome } from './views/home.js';
-import { renderLearnIndex, renderChapter } from './views/learn.js';
+import { renderLearnIndex, renderChapter, renderPhase } from './views/learn.js';
 
 // ── Theme apply ──
 function applyTheme() {
@@ -362,7 +362,8 @@ async function boot() {
   router
     .on('/home',  () => { setActiveTab('home');  renderInto(mountHome); })
     .on('/learn', () => { setActiveTab('learn'); renderInto((r) => r.appendChild(renderLearnIndex())); })
-    .on('/learn/:chapterId', ({ chapterId }) => { setActiveTab('learn'); renderInto((r) => r.appendChild(renderChapter(chapterId))); })
+    .on('/phase/:phaseId', ({ phaseId }) => { setActiveTab(phaseId); renderInto((r) => r.appendChild(renderPhase(phaseId))); })
+    .on('/learn/:chapterId', ({ chapterId }) => { setActiveTab(chapterId.split('-')[0]); renderInto((r) => r.appendChild(renderChapter(chapterId))); })
     .on('/settings', () => { setActiveTab('settings'); renderInto(viewSettings); })
     .fallback((path) => { setActiveTab('home'); renderInto((r) => r.appendChild(h('section', { class: 'view' }, [
       h('h2', { class: 'section__title' }, ['ページが見つかりません']),

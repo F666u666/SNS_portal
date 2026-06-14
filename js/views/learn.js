@@ -29,6 +29,33 @@ export function renderLearnIndex() {
   ]);
 }
 
+export function renderPhase(phaseId) {
+  const p = getPhase(phaseId);
+  if (!p) return renderLearnIndex();
+  const list = chaptersByPhase(p.id);
+  const done = list.filter(c => reads.isDone(c.id)).length;
+  const idx = PHASES.findIndex(x => x.id === phaseId);
+  const prevP = PHASES[idx - 1];
+  const nextP = PHASES[idx + 1];
+  return h('section', { class: 'view' }, [
+    h('p', { class: 'eyebrow' }, [p.label]),
+    h('div', { class: 'section__head', style: { marginTop: '6px', marginBottom: '6px' } }, [
+      h('h2', { class: 'section__title' }, [p.title]),
+      h('span', { class: 'badge' }, [`${done} / ${list.length} 完了`]),
+    ]),
+    h('p', { class: 'card__lede', style: { marginBottom: '8px' } }, [p.tagline]),
+    h('div', { class: 'progress', style: { marginBottom: '20px' } }, [
+      h('div', { class: 'progress__fill', style: { width: `${Math.round((done / list.length) * 100)}%` } }),
+    ]),
+    h('section', { class: 'section' }, list.map(c => renderChapterRow(c))),
+    // Prev / next phase nav
+    h('div', { style: { display: 'flex', gap: '8px', marginTop: '20px' } }, [
+      prevP ? h('a', { class: 'btn btn--ghost btn--sm', href: `#/phase/${prevP.id}`, style: { flex: '1' } }, [`← ${prevP.title}`]) : h('span', { style: { flex: '1' } }, []),
+      nextP ? h('a', { class: 'btn btn--ghost btn--sm', href: `#/phase/${nextP.id}`, style: { flex: '1', textAlign: 'right' } }, [`${nextP.title} →`]) : h('span', { style: { flex: '1' } }, []),
+    ]),
+  ]);
+}
+
 function renderChapterRow(c) {
   const done = reads.isDone(c.id);
   return h('a', { class: `chapter ${done ? 'chapter--done' : ''}`, href: `#/learn/${c.id}` }, [
@@ -60,7 +87,7 @@ export function renderChapter(chapterId) {
   const next = nextChapter(c.id);
 
   const view = h('section', { class: 'view' }, [
-    h('a', { class: 'btn btn--ghost btn--sm', href: '#/learn', style: { marginBottom: '12px' } }, ['← 学習トップ']),
+    h('a', { class: 'btn btn--ghost btn--sm', href: `#/phase/${c.phaseId}`, style: { marginBottom: '12px' } }, [`← ${phase.title}`]),
     // Reading progress bar
     h('div', { class: 'read-progress' }, [
       h('div', { class: 'read-progress__fill', id: 'read-progress-fill' }),
