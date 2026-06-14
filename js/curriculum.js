@@ -35,8 +35,8 @@ export const CHAPTERS = [
   { id: 'p3-monetize',     phaseId: 'p3', n: '02', title: 'マネタイズの全体像',           estMin: 8, suggestedTodos: ['取り扱う商品/案件を1つ決める'] },
   { id: 'p3-mind',         phaseId: 'p3', n: '03', title: 'ストーリーでマネタイズする考え方', estMin: 7, suggestedTodos: ['訴求前後で出す投稿ネタを3本用意'] },
   { id: 'p3-ideas',        phaseId: 'p3', n: '04', title: 'ストーリーズネタ帳',            estMin: 6, suggestedTodos: ['ネタ帳に共感ネタを5個追加'] },
-  { id: 'p3-seven',        phaseId: 'p3', n: '05', title: '爆売れ7ステップ訴求の型',        estMin: 10, suggestedTodos: ['7ステップで訴求の下書きを書く'] },
-  { id: 'p3-writing',      phaseId: 'p3', n: '06', title: '引き込まれる文章の作り方',      estMin: 8, suggestedTodos: ['PREPでフック文を1本書く'] },
+  { id: 'p3-seven',        phaseId: 'p3', n: '05', title: 'ストーリー運用の構成について',  estMin: 10, suggestedTodos: ['7ステップで訴求の下書きを書く'] },
+  { id: 'p3-writing',      phaseId: 'p3', n: '06', title: 'ストーリー文章の骨格について',  estMin: 8, suggestedTodos: ['PREPでフック文を1本書く'] },
   { id: 'p3-cautions',     phaseId: 'p3', n: '07', title: '訴求の注意点と運用ルール',      estMin: 6, suggestedTodos: ['NGワード/トーンを自分用にメモ'] },
 
   // Phase 4 ── 拡張
