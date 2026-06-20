@@ -154,3 +154,14 @@
 
 /* 図のキャプション */
 .lesson .figcap{ text-align:center; color:var(--muted); font-size:12px; margin-top:6px; }
+
+/* 図枠：SVG図解＋キャプション */
+.lesson .vfig{ background:#fbfcfe; border:1px solid var(--line); border-radius:14px; padding:14px 12px 10px; margin:16px 0; text-align:center; }
+.lesson .vfig svg{ width:100%; height:auto; max-width:340px; }
+.lesson .vfig .figcap{ margin-top:8px; }
+
+/* 大きめ矢印フロー（縦折り返し対応） */
+.lesson .flowbig{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px 4px; margin:16px 0; }
+.lesson .flowbig > span{ background:var(--blue5); border:1px solid var(--blue4); color:var(--navy); border-radius:10px; padding:9px 13px; font-weight:700; font-size:13.5px; }
+.lesson .flowbig > span + span::before{ content:"▶"; color:var(--blue2); font-size:10px; margin-right:6px; }
+.lesson .flowbig > span.is-goal{ background:var(--accent); border-color:var(--accent); color:#fff; }

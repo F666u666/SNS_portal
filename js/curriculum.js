@@ -2700,112 +2700,149 @@ export const CHAPTER_BODIES = {
   'p3-conversation': `
 <div class="lesson">
 <div class="what"><div class="h">📍 この章でわかること</div><ul>
-<li>ストーリーで一番やりがちな失敗＝「発信」してしまうこと、の正体</li>
-<li>なぜ"発信"は売れず、"会話"は売れるのか（その奥にある人の心理）</li>
-<li>お客が本当に欲しいのは「情報」じゃない、という大前提</li>
-<li>お客を「視聴者」から「友達」に変える9つの原則と、その深い理由</li>
-<li>どんなジャンルのアカウントにも当てはめられる会話ストーリーの作り方</li>
+<li>ストーリーの失敗＝「発信」してしまうこと</li>
+<li>売れる人は"発信"じゃなく"会話"している理由</li>
+<li>お客が欲しいのは「情報」じゃない、という大前提</li>
+<li>視聴者を友達に変える9つの原則</li>
 </ul></div>
 
 <h2><span class="s">0</span>結局、何が言いたいか</h2>
-<p>ストーリーがうまくいかない人の失敗は、たった1つに集約される。<strong>「発信」してしまっていることだ。</strong></p>
-<p>お知らせ、告知、放送。マイクを持って一段高い所から「これ見てください」「共感してください」とやってしまう。これだと、見る側はずっと"視聴者"のまま。視聴者は、感心はしても惚れない。惚れないから、買わない。</p>
-<div class="key">正解は<strong>「会話」</strong>だ。友達とのLINE、女子会のノリ。<strong>お客を"視聴者"扱いするから売れない。"友達"扱いするから売れる。</strong></div>
-<p>でも、これはまだ表面の話だ。もう一段深く掘る。<strong>なぜ「会話」だと売れるのか。</strong>その答えがこの章の本当の中身だ。</p>
 
-<h4>お客は「情報」が欲しいんじゃない</h4>
-<p>多くの人が勘違いしてる。「役立つ情報を出せばファンになってくれる」と。違う。<strong>情報はググれば出てくる。今どき、情報そのものに希少価値はない。</strong></p>
-<p>お客が本当に欲しいのは、情報じゃなく<strong>「わかってもらえた」という体験</strong>だ。自分の気持ちを、自分より上手に言葉にしてくれる人。「それ、私も思ってた」と感じさせてくれる人。世の中にこれは少ない。だから希少で、だから惚れる。</p>
-<div class="key">ファンになる理由は「情報が役に立ったから」じゃない。<strong>「この人は私をわかってくれる」と感じたから。</strong>あなたが本当に売ってるのは情報じゃない。"わかってもらえる感覚"＝居場所だ。</div>
-<p>ここが分かると、全部つながる。<strong>わかってもらえる体験 → 信頼が毎日少しずつ積まれる → 友達になる → 友達のおすすめは疑われない → 売れる。</strong>この一本の線が、この章の背骨だ。</p>
-<div class="warn">だからストーリーの目的は「情報を届けること」じゃない。<b>「わかってくれる人だ、と思ってもらうこと」だ。</b>情報は、そう思ってもらうための手段でしかない。</div>
-
-<h2><span class="s">1</span>なぜ「発信」は売れず「会話」は売れるのか</h2>
-<p>恋愛で考えると一発で分かる。初対面でいきなり「付き合って」は引かれる。でも毎日くだらないやり取りをして、親しくなって、「この人いいな」と思われてからの告白は通る。<strong>告白の成功は、告白そのものじゃなく"その前の毎日"で決まってる。</strong></p>
-<div class="vs">
-<div class="l"><div class="t">✗ 発信＝「点」</div>たまに渾身の名スピーチを打つ。その瞬間は反応が来る。でも次の日には忘れられる。点はいくら打っても線にならない。</div>
-<div class="r"><div class="t">○ 会話＝「線」</div>毎日ちいさなやり取りを重ねる。1回は地味でも、積み重ねが「親しみ」になる。信頼は線でしか貯まらない。</div>
+<div class="vfig">
+<svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="発信と会話の違い">
+<rect x="0" y="0" width="158" height="150" rx="12" fill="#f6f6f7" stroke="#cbd5e0"/>
+<rect x="162" y="0" width="158" height="150" rx="12" fill="#eaf1f8" stroke="#cdddec"/>
+<text x="79" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#718096">✗ 発信</text>
+<text x="241" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#1e4e7e">○ 会話</text>
+<!-- 発信: megaphone to crowd -->
+<path d="M30 70 l26 -14 v40 l-26 -14 z" fill="#a0aec0"/>
+<rect x="26" y="64" width="8" height="24" rx="2" fill="#718096"/>
+<path d="M60 60 q10 16 0 32" stroke="#a0aec0" stroke-width="2" fill="none"/>
+<path d="M66 54 q16 22 0 44" stroke="#cbd5e0" stroke-width="2" fill="none"/>
+<circle cx="104" cy="62" r="7" fill="#cbd5e0"/><circle cx="126" cy="62" r="7" fill="#cbd5e0"/>
+<circle cx="104" cy="92" r="7" fill="#cbd5e0"/><circle cx="126" cy="92" r="7" fill="#cbd5e0"/>
+<text x="79" y="130" text-anchor="middle" font-size="11" fill="#718096">一方通行。視聴者は惚れない</text>
+<!-- 会話: two speech bubbles -->
+<rect x="186" y="50" width="56" height="34" rx="10" fill="#2b6cb0"/><path d="M198 84 l0 10 l12 -10 z" fill="#2b6cb0"/>
+<rect x="246" y="74" width="56" height="34" rx="10" fill="#fff" stroke="#2b6cb0"/><path d="M290 108 l0 10 l-12 -10 z" fill="#fff" stroke="#2b6cb0"/>
+<text x="214" y="71" text-anchor="middle" font-size="11" fill="#fff">わかるよ</text>
+<text x="274" y="95" text-anchor="middle" font-size="11" fill="#2b6cb0">私も！</text>
+<text x="241" y="130" text-anchor="middle" font-size="11" fill="#1e4e7e">双方向。友達になる</text>
+</svg>
+<div class="figcap">マイクで放送するな。隣で会話しろ</div>
 </div>
-<div class="key"><strong>売上は、貯まった信頼の総量に比例する。</strong>ストーリーは「売り場」じゃなく、"信頼を毎日少しずつ貯める装置"だ。だから1日1つでいい。毎日続けることに意味がある。</div>
-<h4>友達の言葉は「広告」にならない</h4>
-<p>もう1つ、決定的な理由がある。<strong>お客が世界で一番警戒してるのは「売りつけられること」だ。</strong>発信者＝売る人、というポジションにいる限り、何を言っても「どうせ宣伝でしょ」と疑われる。</p>
-<p>でも"友達"のポジションを取ると、この警戒が消える。同じ商品を勧めても、<strong>広告は疑われ、友達のおすすめは信じられる。</strong>「友達になる」のは、優しさでも遠回りでもない。お客の警戒を解く、最強の販売戦略だ。</p>
 
-<h2><span class="s">2</span>大前提：人は「自分の物語」にしか興味がない</h2>
-<p>これがこの章で一番大事な1個。<strong>人は、あなたの話には興味がない。自分の話にしか興味がない。</strong>残酷だけど、これが真実だ。</p>
-<p>だから、いい投稿はこうなる。<strong>「あなたの話」に見えて、実は「読み手の話」になっている。</strong>あなたの投稿は、読み手が自分を映す"鏡"でなければいけない。</p>
-<div class="vs">
-<div class="l"><div class="t">✗ 自分の話で完結</div>「私は看護師時代こういう経験をして、こう感じて、こう乗り越えました」→ 立派だが、読み手は「へぇ、あなたはね」で終わる。他人事。</div>
-<div class="r"><div class="t">○ 読み手が映る鏡</div>「あの時の私、まじこれ」（あえてぼかす）→ 読み手が「あー私のことだ」と自分を重ねる。自分の話になる。</div>
+<div class="key">お客を"視聴者"扱いするから売れない。<strong>"友達"扱いするから売れる。</strong>物は、友達になった後に勝手に売れる。</div>
+
+<h3>お客は「情報」が欲しいんじゃない</h3>
+<div class="vfig">
+<svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="情報とわかってもらえる体験">
+<rect x="0" y="20" width="150" height="80" rx="12" fill="#f6f6f7" stroke="#cbd5e0"/>
+<text x="75" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#718096">情報</text>
+<text x="75" y="74" text-anchor="middle" font-size="11" fill="#a0aec0">ググれば出る</text>
+<text x="75" y="90" text-anchor="middle" font-size="11" fill="#a0aec0">＝ありふれてる</text>
+<text x="160" y="65" text-anchor="middle" font-size="20" fill="#cbd5e0">≠</text>
+<rect x="170" y="20" width="150" height="80" rx="12" fill="#fff5fa" stroke="#b83280"/>
+<text x="245" y="48" text-anchor="middle" font-size="13" font-weight="700" fill="#b83280">わかってもらえた</text>
+<text x="245" y="70" text-anchor="middle" font-size="11" fill="#8a4a6e">この人少ない</text>
+<text x="245" y="86" text-anchor="middle" font-size="11" fill="#8a4a6e">＝希少＝惚れる</text>
+</svg>
+<div class="figcap">あなたが本当に売ってるのは"わかってもらえる感覚"</div>
 </div>
-<p>「看護師時代の私まじこれ」がなぜ強いか。<strong>具体的に説明しないから、読み手が自分の経験で埋める。</strong>「看護師の私すぎる」「看護師じゃないけど今の私だ」と、各自が主人公として参加する。これが鏡の力だ。</p>
+<p>ファンになる理由は「情報が役立った」からじゃない。<strong>「この人は私をわかってくれる」と感じたからだ。</strong></p>
 
-<h2><span class="s">3</span>会話に変える9つの原則（と、その奥にある理由）</h2>
-<p>ここから具体。どのジャンルでも同じ。各原則を「表面のルール → 奥にある理由 → 例」で見せる。理由まで分かると、応用が効く。</p>
+<div class="flowbig">
+<span>わかってもらえる</span><span>信頼が積まれる</span><span>友達になる</span><span class="is-goal">勝手に売れる</span>
+</div>
 
-<h4>① 説明するな、削れ</h4>
-<div class="bad"><b>✗ 発信</b>「話題の〇〇に合わせて、私の△△時代のあるあるを話してみたけど、共感してくれる人いる？」</div>
-<div class="good"><b>○ 会話</b>「△△時代の私、まじこれ」（動画を貼る）</div>
-<p><b>奥にある理由：</b>完成された情報は、読み手を"観客"にする。未完成な情報は、読み手を"参加者"にする。<strong>人は、自分が手をかけたもの・頭を使ったものに愛着を持つ。</strong>説明しきると読み手の仕事がなくなり、ただ眺めるだけの傍観者になる。余白を残すと、読み手が「自分で意味を埋める」作業に参加して、自分ごとになる。</p>
-<div class="note">つまずきポイント：「説明しないと伝わらないのでは」と不安になる。逆だ。伝わりすぎると、参加する隙が消える。友達に動画を見せる時の「これ見て」を思い出せ。</div>
+<h2><span class="s">1</span>発信は「点」、会話は「線」</h2>
+<div class="vfig">
+<svg viewBox="0 0 320 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="点と線">
+<text x="79" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#718096">✗ 発信＝点</text>
+<circle cx="30" cy="70" r="6" fill="#a0aec0"/><circle cx="70" cy="50" r="6" fill="#a0aec0"/><circle cx="110" cy="85" r="6" fill="#a0aec0"/><circle cx="95" cy="40" r="6" fill="#a0aec0"/>
+<text x="79" y="115" text-anchor="middle" font-size="11" fill="#718096">バラバラ。積み上がらない</text>
+<line x1="160" y1="20" x2="160" y2="120" stroke="#e2e8f0"/>
+<text x="245" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#1e4e7e">○ 会話＝線</text>
+<polyline points="186,95 216,80 246,62 276,42 304,28" fill="none" stroke="#2b6cb0" stroke-width="3"/>
+<circle cx="186" cy="95" r="5" fill="#2b6cb0"/><circle cx="216" cy="80" r="5" fill="#2b6cb0"/><circle cx="246" cy="62" r="5" fill="#2b6cb0"/><circle cx="276" cy="42" r="5" fill="#2b6cb0"/><circle cx="304" cy="28" r="5" fill="#b83280"/>
+<text x="245" y="115" text-anchor="middle" font-size="11" fill="#1e4e7e">毎日が積み上がり信頼になる</text>
+</svg>
+<div class="figcap">売上は、貯まった信頼の総量に比例する</div>
+</div>
+<div class="key">ストーリーは「売り場」じゃなく、<strong>信頼を毎日少しずつ貯める装置</strong>。だから1日1つでいい。毎日続けることに意味がある。</div>
+<p><b>友達の言葉は「広告」にならない。</b>お客が一番警戒するのは「売りつけ」。友達ポジションを取ると警戒が消え、同じ紹介でも"おすすめ"として信じられる。</p>
 
-<h4>② 読者を主人公にしろ</h4>
-<p><b>奥にある理由：</b>①の続き。余白は「読み手が自分を投影するスペース」になる。あなたが主役で語りきると、読み手は脇役になる。<strong>主役の椅子を、読み手に空けて渡す。</strong>「私はこうだった」より「これ、心当たりない？」の方が、相手が前に出てくる。</p>
+<h2><span class="s">2</span>人は「自分の物語」にしか興味がない</h2>
+<div class="vfig">
+<svg viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="鏡">
+<circle cx="70" cy="55" r="16" fill="#9cb8d6"/><rect x="52" y="76" width="36" height="34" rx="10" fill="#9cb8d6"/>
+<text x="70" y="128" text-anchor="middle" font-size="11" fill="#718096">読者</text>
+<rect x="150" y="24" width="84" height="96" rx="10" fill="#eaf1f8" stroke="#2b6cb0" stroke-width="2"/>
+<circle cx="192" cy="58" r="14" fill="#2b6cb0"/><rect x="176" y="76" width="32" height="30" rx="9" fill="#2b6cb0"/>
+<text x="192" y="135" text-anchor="middle" font-size="11" fill="#1e4e7e">映った自分</text>
+<path d="M92 65 L146 65" stroke="#b83280" stroke-width="2" marker-end="url(#ar)"/>
+<defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#b83280"/></marker></defs>
+<text x="262" y="58" font-size="11" fill="#b83280">あなたの投稿は</text>
+<text x="262" y="76" font-size="11" fill="#b83280">読者が自分を</text>
+<text x="262" y="94" font-size="11" fill="#b83280">映す"鏡"</text>
+</svg>
+<div class="figcap">「あなたの話」に見えて「読み手の話」になっている</div>
+</div>
+<p>「看護師時代の私まじこれ」が強いのは、<strong>具体的に説明しないから、読み手が自分の経験で埋める</strong>から。各自が主人公として参加する。これが鏡の力だ。</p>
 
-<h4>③ 抽象を具体に</h4>
-<div class="vs"><div class="l"><div class="t">✗ 抽象</div>「冗談じゃないくらい大変」</div><div class="r"><div class="t">○ 具体</div>「毎日ケーキ爆食いしないと保たないレベルで大変」</div></div>
-<p><b>奥にある理由：</b>人の脳は、抽象では映像を作れない。<strong>映像が浮かんで初めて感情が動く。</strong>「大変」は流れるが、「ケーキ爆食い」は画が見えて、笑えて、共感が起きる。共感は、理屈じゃなく"絵が見えた瞬間"に生まれる。</p>
+<h2><span class="s">3</span>会話に変える9つの原則</h2>
+<p>どのジャンルでも同じ。✗発信 → ○会話。</p>
 
-<h4>④ 正論より自己開示（価値観で共感させる）</h4>
-<div class="bad"><b>✗ 発信</b>「悩んだら一人で抱えないで。なんでも相談してね」（正論・アドバイス）</div>
-<div class="good"><b>○ 会話</b>「前は考えすぎて病みかけてたけど、考えすぎないようにしたら楽になったわ」（自己開示）</div>
-<p><b>奥にある理由：</b>正論は"上下関係"を作る。教える人が上、教わる人が下。<strong>人は、上から来る相手には心を開かない。弱さを見せる相手に心を開く。</strong>自己開示は"横の関係"を作る。信頼は「この人すごい」からじゃなく「この人、私と同じだ」から生まれる。だから気づきは、教えの形でなく「自分はこうだった」という告白の形で出す。</p>
-<div class="note">実績を出す時も同じ。自慢で終わらせず「だから、あなたにもできる」と必ず横に並ぶ。実績は"上に立つ道具"でなく"同じ側にいる証拠"として使う。</div>
+<div class="tc"><div class="hd">① 説明するな、削れ</div><div class="bd">
+<div class="bad"><b>✗</b>「話題の〇〇に合わせて△△時代のあるあるを話したけど共感する人いる？」</div>
+<div class="good"><b>○</b>「△△時代の私まじこれ」（動画を貼る）</div>
+<span class="lab">奥の理由：</span>完成した情報は読者を"観客"に、未完成は"参加者"にする。人は手をかけたものに愛着を持つ。</div></div>
 
-<h4>⑤ 言葉でターゲットを管理する</h4>
-<p><b>奥にある理由：</b>言葉は「集まる人を選別するフィルター」だ。読み手は、あなたの言葉に"自分"を投影する。「今も大変」と書けば、読み手は"大変な自分"を投影し、大変な人ばかり集まる。「乗り越えた」と書けば、"乗り越えたい自分"を投影し、なりたい人が集まる。</p>
-<div class="vs"><div class="l"><div class="t">✗</div>「仕事って今もずっとしんどい」→ 憧れて見てる人が「この人になってもしんどいのか」と引く</div><div class="r"><div class="t">○</div>「しんどかった時も、今も思うけど」→ "今は違うステージにいる"と暗に伝わり、なりたい層が残る</div></div>
-<p><strong>たった1語で、来てほしい人を呼び、引いてほしい誤解を消せる。</strong>誰に向けて書くかを、言葉選びで設計する。</p>
+<div class="tc"><div class="hd">② 読者を主人公にしろ</div><div class="bd">余白＝読み手が自分を投影するスペース。<span class="lab">奥の理由：</span>主役の椅子を読者に空けて渡す。「私はこう」より「心当たりない？」。</div></div>
 
-<h4>⑥ 見せられるものは見せる</h4>
-<p><b>奥にある理由：</b>言葉で「すごいんです」と言うと宣伝に聞こえて疑われる。でも証拠（スクショ・サムネ・ビフォーアフター画像）は、読み手が自分の目で見て"自分で判断"する。<strong>人は、言われたことより、自分で見つけたことを信じる。</strong>動画は説明せずサムネを貼る。証拠は語らずスクショを貼る。</p>
+<div class="tc"><div class="hd">③ 抽象を具体に</div><div class="bd">
+<div class="vs"><div class="l"><div class="t">✗ 抽象</div>冗談じゃないくらい大変</div><div class="r"><div class="t">○ 具体</div>毎日ケーキ爆食いしないと保たないレベル</div></div>
+<span class="lab">奥の理由：</span>脳は具体でしか映像化できない。絵が見えた瞬間に共感が起きる。</div></div>
 
-<h4>⑦ 選ばせる時は絞る</h4>
-<div class="vs"><div class="l"><div class="t">✗ 多すぎ</div>「悩みでも愚痴でも相談でも、なんでも送って」</div><div class="r"><div class="t">○ 絞る</div>「この3つのうち1つ、送って」</div></div>
-<p><b>奥にある理由：</b>人は選択肢が多いと、選ぶこと自体が面倒になって動かなくなる。<strong>自由を与えるほど、人は止まる。</strong>「なんでもいい」は、一見やさしいが一番動かない。枠を狭く示すほど、人は「これなら」と動く。</p>
+<div class="tc"><div class="hd">④ 正論より自己開示</div><div class="bd">
+<div class="bad"><b>✗</b>「一人で抱えないで相談してね」（正論・上から）</div>
+<div class="good"><b>○</b>「考えすぎないようにしたら楽になったわ」（自己開示）</div>
+<span class="lab">奥の理由：</span>正論は"上下"、自己開示は"横"。信頼は「すごい」でなく「同じだ」から生まれる。</div></div>
 
-<h4>⑧ 締めにキャラを残す</h4>
-<p><b>奥にある理由：</b>正しさは記憶に残らない。<strong>感情が記憶に残る。</strong>人は「役に立つ人」より「一緒にいて楽しい人」を選ぶ。最後に自虐やボケを一言（「これを機に〇〇始めようかと」「私を成仏させてくれ…」）。その一言が、人間味と「また見たい」を作る。"いい人"より"面白い友達"が惚れられる。</p>
+<div class="tc"><div class="hd">⑤ 言葉でターゲットを管理</div><div class="bd">
+<div class="splitbar"><div class="sb-main" style="width:55%">「今も大変」→大変な人が集まる</div><div class="sb-sub" style="width:45%">「乗り越えた」→なりたい人</div></div>
+<span class="lab">奥の理由：</span>言葉は集まる人を選別するフィルター。読者はその言葉に自分を投影する。</div></div>
 
-<h4>⑨ ゴールは「反応」じゃなく「関係」</h4>
-<p><b>奥にある理由：</b>質問箱やスタンプの数は、その日で消える"点"だ。狙うのは、消えない"線"——<strong>「何かあったら、この人に相談していいんだ」という関係そのもの。</strong>関係は資産になり、貯まり続け、いつか販売（ローンチ）の土台になる。単発の反応を追うのをやめて、関係を貯めにいく。</p>
+<div class="tc"><div class="hd">⑥ 見せられるものは見せる</div><div class="bd">動画→サムネ、証拠→スクショ。<span class="lab">奥の理由：</span>人は言われたことより、自分で見つけたことを信じる。</div></div>
+
+<div class="tc"><div class="hd">⑦ 選ばせる時は絞る</div><div class="bd">
+<div class="vs"><div class="l"><div class="t">✗</div>なんでも送って</div><div class="r"><div class="t">○</div>この3つから1つ送って</div></div>
+<span class="lab">奥の理由：</span>自由を与えるほど人は止まる。枠を狭く示すほど動く。</div></div>
+
+<div class="tc"><div class="hd">⑧ 締めにキャラを残す</div><div class="bd">「私を成仏させてくれ…」のひと言。<span class="lab">奥の理由：</span>正しさは記憶に残らない、感情が残る。"いい人"より"面白い友達"が惚れられる。</div></div>
+
+<div class="tc"><div class="hd">⑨ ゴールは「反応」じゃなく「関係」</div><div class="bd">質問箱で終わらせず「何かあったら相談していい」へ。<span class="lab">奥の理由：</span>点（消える反応）でなく線（資産になる関係）。販売の土台になる。</div></div>
 
 <h2><span class="s">4</span>どんなアカウントでも使える型</h2>
-<p>ジャンルが美容でも子育てでもお金でも筋トレでも、会話ストーリーの骨格は同じだ。</p>
-<div class="grp"><div class="gh">会話ストーリーの5ステップ</div><div class="gb">
-<div class="rule"><span class="rn">① ネタ</span> 共通の体験・流行・あるあるから入る<span class="gb2">「みんなも経験あるよね」の入口で鏡を用意</span></div>
-<div class="rule"><span class="rn">② 自己開示</span> 自分の本音・失敗・価値観を見せる<span class="gb2">正論でなく「私はこうだった」で横に並ぶ</span></div>
-<div class="rule"><span class="rn">③ 余白</span> 説明しすぎない・言い切らない<span class="gb2">読み手が自分を投影する隙を残す</span></div>
-<div class="rule"><span class="rn">④ 巻き込み</span> 共感で「私も！」を引き出す<span class="gb2">絞った問いかけで参加させる</span></div>
-<div class="rule"><span class="rn">⑤ 関係導線</span> 「また話したい・相談したい」へつなぐ<span class="gb2">単発の反応で終わらせない</span></div>
-</div></div>
-<h4>ジャンル別の入り口（例）</h4>
-<div class="tc"><div class="hd">美容</div><div class="bd">「30代の私、まじこれ」→ 鏡を見てため息ついた朝の自己開示 →「同じ人いる？」</div></div>
-<div class="tc"><div class="hd">子育て</div><div class="bd">「昨日、本気でやらかした」→ つい怒鳴って後悔した話 →「みんなはどうしてる？」</div></div>
-<div class="tc"><div class="hd">お金・働き方</div><div class="bd">「給料日なのに、もう財布が軽い」→ 昔の自分の失敗 →「同じ過ちした人、一緒に成仏しよ」</div></div>
-<div class="warn">どのジャンルでも禁止なのは「先生になること」。教えよう・正そうとした瞬間、横の関係が壊れて、会話は発信に戻る。<b>最後まで"隣の友達"の目線でいる。</b></div>
+<div class="flowbig">
+<span>ネタ（あるある）</span><span>自己開示</span><span>余白を残す</span><span>巻き込み</span><span class="is-goal">関係導線</span>
+</div>
+<div class="stats">
+<div class="stat-c"><div class="n">美容</div><div class="l">「30代の私まじこれ」→ため息の朝→「同じ人いる？」</div></div>
+<div class="stat-c"><div class="n">子育て</div><div class="l">「昨日やらかした」→怒鳴った話→「どうしてる？」</div></div>
+<div class="stat-c"><div class="n">お金</div><div class="l">「給料日なのに財布が軽い」→失敗談→「一緒に成仏しよ」</div></div>
+</div>
+<div class="warn">禁止なのは「先生になること」。教えよう・正そうとした瞬間、会話は発信に戻る。<b>最後まで"隣の友達"でいる。</b></div>
 
 <h2><span class="s">5</span>検品：発信になってないか</h2>
 <div class="check"><ul>
-<li>司会者になってないか？（隣の友達の口調か）</li>
-<li>説明しすぎてないか？（読み手が参加する余白を残したか）</li>
-<li>主役は読者か？（自分の話で完結してないか＝鏡になってるか）</li>
-<li>正論を押し付けてないか？（自己開示で横に並べているか）</li>
-<li>具体で画が浮かぶか？（抽象で流していないか）</li>
-<li>言葉が、来てほしい人を呼べているか？</li>
-<li>ゴールは関係づくりか？（単発の反応で終わってないか）</li>
+<li>司会者でなく、隣の友達の口調か</li>
+<li>説明しすぎず、読者が入る余白があるか</li>
+<li>自分の話で完結せず、鏡になっているか</li>
+<li>正論でなく自己開示で横に並べたか</li>
+<li>ゴールは関係づくりか</li>
 </ul></div>
-<div class="end">お客は情報じゃなく「わかってもらえる体験」を求めてる。<br>だから——ストーリーで物を売るな。<strong>友達になれ。</strong><br>物は、友達になった後に勝手に売れる。</div>
+<div class="end">お客は情報じゃなく「わかってもらえる体験」を求めてる。<br>だから——物を売るな。<strong>友達になれ。</strong></div>
 </div>
   `,
 
