@@ -10,19 +10,20 @@
   --ink:#2d3748; --muted:#718096; --line:#cbd5e0;
   --accent:#b83280; --ng:#c0392b; --ngbg:#fdf3f2;
   --exbg:#f1f8f4; --ex:#2f855a; --gold:#b7791f; --goldbg:#fffaf0;
-  color:var(--ink); line-height:1.85; font-size:15px;
+  color:#33404f; line-height:2.0; font-size:15.5px;
   font-family:-apple-system,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+  letter-spacing:0.01em;
 }
 
 /* reset .prose decorations inside lesson */
 .lesson > * + *{ margin-top:0; }
-.lesson p{ margin:8px 0; line-height:1.85; }
-.lesson ul,.lesson ol{ padding-left:20px; margin:8px 0; }
+.lesson p{ margin:14px 0; line-height:2.0; }
+.lesson ul,.lesson ol{ padding-left:20px; margin:12px 0; }
 .lesson ul{ list-style:disc; }
-.lesson ul > li{ margin:4px 0; padding-left:0; }
+.lesson ul > li{ margin:7px 0; padding-left:2px; line-height:1.85; }
 .lesson ul > li::before{ content:none; }
-.lesson ol > li{ margin:4px 0; padding-left:0; }
-.lesson li{ margin:4px 0; }
+.lesson ol > li{ margin:7px 0; padding-left:2px; line-height:1.85; }
+.lesson li{ margin:7px 0; }
 .lesson strong{ color:var(--accent); font-weight:700; }
 .lesson em{ font-style:normal; color:var(--navy); font-weight:600; }
 
@@ -39,10 +40,10 @@
 .lesson .what li{ margin:3px 0; font-size:14px; }
 
 /* headings */
-.lesson h2{ font-size:18px; color:#fff; background:var(--navy); border-radius:9px; padding:9px 13px; margin:30px 0 12px; border:0; font-weight:700; }
+.lesson h2{ font-size:18.5px; color:#fff; background:var(--navy); border-radius:9px; padding:11px 14px; margin:40px 0 16px; border:0; font-weight:700; line-height:1.45; }
 .lesson h2 .s{ display:inline-block; background:#fff; color:var(--navy); border-radius:6px; padding:0 8px; font-size:15px; margin-right:8px; font-weight:bold; }
-.lesson h3{ font-size:15.5px; color:var(--navy); margin:18px 0 7px; border-bottom:2px solid var(--blue4); border-top:0; padding:0 0 4px; font-weight:700; }
-.lesson h4{ font-size:14px; color:var(--blue); margin:14px 0 4px; border:0; padding:0; font-weight:700; }
+.lesson h3{ font-size:16px; color:var(--navy); margin:28px 0 10px; border-bottom:2px solid var(--blue4); border-top:0; padding:0 0 5px; font-weight:700; line-height:1.5; }
+.lesson h4{ font-size:14.5px; color:var(--blue); margin:22px 0 8px; border:0; padding:0; font-weight:700; line-height:1.5; }
 
 /* callouts */
 .lesson .key{ background:var(--blue5); border-left:5px solid var(--blue); padding:11px 14px; border-radius:0 8px 8px 0; margin:12px 0; }
@@ -103,3 +104,53 @@
 .lesson .note{ color:var(--muted); font-size:12.5px; }
 .lesson .end{ text-align:center; background:var(--navy); color:#fff; border-radius:12px; padding:16px; margin-top:18px; font-size:14.5px; }
 .lesson .end b{ color:#fff; }
+
+/* ============================================================
+   Visual kit — 見るだけで掴める図解部品（.lesson 内）
+   ============================================================ */
+
+/* 数式：A × B × C = 結果 */
+.lesson .eq{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; background:#fbfcfe; border:1px solid var(--line); border-radius:12px; padding:16px 12px; margin:14px 0; }
+.lesson .eq-box{ background:#fff; border:2px solid var(--blue3); color:var(--navy); border-radius:10px; padding:8px 12px; font-weight:700; font-size:14px; text-align:center; min-width:64px; line-height:1.4; }
+.lesson .eq-box small{ display:block; color:var(--muted); font-weight:600; font-size:11px; }
+.lesson .eq-box.is-key{ background:var(--blue); color:#fff; border-color:var(--blue); }
+.lesson .eq-op{ font-weight:700; color:var(--blue2); font-size:18px; }
+
+/* 矢印フロー：A → B → C */
+.lesson .flow{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 4px; margin:14px 0; }
+.lesson .flow > span{ background:var(--blue5); border:1px solid var(--blue4); color:var(--navy); border-radius:20px; padding:6px 13px; font-weight:700; font-size:13px; }
+.lesson .flow > span + span::before{ content:"→"; color:var(--blue2); font-weight:700; margin-right:6px; margin-left:0; }
+.lesson .flow > span.is-goal{ background:var(--accent); border-color:var(--accent); color:#fff; }
+
+/* 重なり図（ベン）：A × B の重なり */
+.lesson .venn{ position:relative; height:170px; margin:16px 0; }
+.lesson .venn-c{ position:absolute; top:18px; width:130px; height:130px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:700; font-size:13.5px; line-height:1.4; }
+.lesson .venn-a{ left:50%; margin-left:-118px; background:rgba(43,108,176,.16); border:2px solid var(--blue2); color:var(--navy); }
+.lesson .venn-b{ left:50%; margin-left:-12px; background:rgba(184,50,128,.12); border:2px solid var(--accent); color:var(--accent); }
+.lesson .venn-mid{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; background:var(--navy); color:#fff; border-radius:20px; padding:5px 10px; font-weight:700; font-size:12px; white-space:nowrap; box-shadow:0 2px 8px rgba(0,0,0,.15); }
+
+/* 比率バー：9 : 1 のような割合 */
+.lesson .splitbar{ display:flex; height:42px; border-radius:10px; overflow:hidden; margin:14px 0; font-weight:700; font-size:13px; }
+.lesson .splitbar > div{ display:flex; align-items:center; justify-content:center; color:#fff; padding:0 8px; text-align:center; line-height:1.3; }
+.lesson .splitbar .sb-main{ background:var(--blue); }
+.lesson .splitbar .sb-sub{ background:var(--blue3); color:var(--navy); }
+
+/* 大数字スタット */
+.lesson .stats{ display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; }
+.lesson .stat-c{ flex:1 1 0; min-width:90px; background:#fbfcfe; border:1px solid var(--line); border-radius:12px; padding:12px 8px; text-align:center; }
+.lesson .stat-c .n{ font-size:24px; font-weight:800; color:var(--blue); line-height:1.1; }
+.lesson .stat-c .l{ font-size:12px; color:var(--muted); margin-top:4px; }
+
+/* はしご（バリューラダー等）：下から上へ積み上がる段 */
+.lesson .ladder{ display:flex; flex-direction:column-reverse; gap:6px; margin:14px 0; }
+.lesson .ladder .rung{ background:var(--blue5); border:1px solid var(--blue4); border-radius:10px; padding:9px 13px; font-size:13.5px; }
+.lesson .ladder .rung b{ color:var(--navy); }
+.lesson .ladder .rung:nth-child(1){ margin-right:0; }
+.lesson .ladder .rung:nth-child(2){ margin-right:8%; }
+.lesson .ladder .rung:nth-child(3){ margin-right:16%; }
+.lesson .ladder .rung:nth-child(4){ margin-right:24%; }
+.lesson .ladder .rung.is-top{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.lesson .ladder .rung.is-top b{ color:#fff; }
+
+/* 図のキャプション */
+.lesson .figcap{ text-align:center; color:var(--muted); font-size:12px; margin-top:6px; }
