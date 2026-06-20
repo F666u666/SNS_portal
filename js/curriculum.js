@@ -35,9 +35,10 @@ export const CHAPTERS = [
   { id: 'p3-monetize',     phaseId: 'p3', n: '02', title: 'マネタイズの全体像',           estMin: 8, suggestedTodos: ['取り扱う商品/案件を1つ決める'] },
   { id: 'p3-mind',         phaseId: 'p3', n: '03', title: 'ストーリーでマネタイズする考え方', estMin: 7, suggestedTodos: ['訴求前後で出す投稿ネタを3本用意'] },
   { id: 'p3-ideas',        phaseId: 'p3', n: '04', title: 'ストーリーズネタ帳',            estMin: 6, suggestedTodos: ['ネタ帳に共感ネタを5個追加'] },
-  { id: 'p3-seven',        phaseId: 'p3', n: '05', title: 'ストーリー運用の構成について',  estMin: 10, suggestedTodos: ['7ステップで訴求の下書きを書く'] },
-  { id: 'p3-writing',      phaseId: 'p3', n: '06', title: 'ストーリー文章の骨格について',  estMin: 8, suggestedTodos: ['PREPでフック文を1本書く'] },
-  { id: 'p3-cautions',     phaseId: 'p3', n: '07', title: '訴求の注意点と運用ルール',      estMin: 6, suggestedTodos: ['NGワード/トーンを自分用にメモ'] },
+  { id: 'p3-conversation', phaseId: 'p3', n: '05', title: 'ストーリーの本質について（発信じゃなく会話）', estMin: 9, suggestedTodos: ['自分のストーリーを「会話」に書き直す'] },
+  { id: 'p3-seven',        phaseId: 'p3', n: '06', title: 'ストーリー運用の構成について',  estMin: 10, suggestedTodos: ['7ステップで訴求の下書きを書く'] },
+  { id: 'p3-writing',      phaseId: 'p3', n: '07', title: 'ストーリー文章の骨格について',  estMin: 8, suggestedTodos: ['PREPでフック文を1本書く'] },
+  { id: 'p3-cautions',     phaseId: 'p3', n: '08', title: '訴求の注意点と運用ルール',      estMin: 6, suggestedTodos: ['NGワード/トーンを自分用にメモ'] },
 
   // Phase 4 ── 拡張
   { id: 'p4-kpi',          phaseId: 'p4', n: '01', title: '収益化7大ポイントとKPI',       estMin: 8,  suggestedTodos: ['週次KPIシートを開いて記入する'] },
@@ -2359,6 +2360,112 @@ export const CHAPTER_BODIES = {
 <div class="bad"><b>✗ 止まる人</b>「もっといいネタないかな」と探し続け、結局1本も出さずに1週間が終わる。</div>
 
 <div class="end">ネタは<strong>「教育・共感・訴求・質問返し」の4タイプ</strong>を日替わりで回す。<br>ジャンル別の型はそのまま真似してOK。<br><strong>完璧を待つな。今日、共感ネタを1個出すところから始めろ。</strong></div>
+</div>
+  `,
+
+  'p3-conversation': `
+<div class="lesson">
+<div class="what"><div class="h">📍 この章でわかること</div><ul>
+<li>ストーリーで一番やりがちな失敗＝「発信」してしまうこと</li>
+<li>売れる人は"発信"じゃなく"会話"している、の本当の意味</li>
+<li>お客を「視聴者」から「友達」に変える9つの原則</li>
+<li>どんなジャンルのアカウントにも当てはめられる会話ストーリーの作り方</li>
+</ul></div>
+
+<h2><span class="s">0</span>結局、何が言いたいか</h2>
+<p>ストーリーがうまくいかない人の失敗は、たった1つに集約される。<strong>「発信」してしまっていることだ。</strong></p>
+<p>お知らせ、告知、放送。マイクを持って一段高い所から「これ見てください」「共感してください」とやってしまう。これだと、見る側はずっと"視聴者"のまま。視聴者は、感心はしても惚れない。惚れないから、買わない。</p>
+<div class="key">正解は<strong>「会話」</strong>だ。友達とのLINE、女子会のノリ。<strong>お客を"視聴者"扱いするから売れない。"友達"扱いするから売れる。</strong>物は、友達になった後に勝手に売れる。</div>
+<p>これは恋愛とまったく同じ。初対面で「付き合って」は引かれる。毎日くだらない会話をして、親しくなって、「この人いいな」と思われてから、はじめて告白が通る。<strong>ストーリーは、その"毎日の会話"をする場所だ。</strong></p>
+<div class="warn">覚えておくこと。ストーリーの目的は「情報を届けること」じゃない。<b>「友達になること」だ。</b>情報は、友達になるための手段でしかない。</div>
+
+<h2><span class="s">1</span>ゴールは「惚れさせる」関係づくり</h2>
+<p>毎日のストーリーで、見る人の感情をこの順番でのぼらせていく。</p>
+<div class="fig"><div class="tl">
+<div class="slot"><span class="time">見る</span><div class="w2">まず気づいてもらう</div></div>
+<div class="slot"><span class="time">気になる</span><div class="w2">「この人なんか面白い」</div></div>
+<div class="slot"><span class="time">知りたい</span><div class="w2">「もっと見たい」でフォロー</div></div>
+<div class="slot"><span class="time">分かる</span><div class="w2">価値観に共感「わかってる人だ」</div></div>
+<div class="slot"><span class="time">欲しい</span><div class="w2">「この人の言うこと、試したい」</div></div>
+<div class="slot"><span class="time">好き</span><div class="w2">「この人から買いたい・相談したい」</div></div>
+</div></div>
+<p>最初に決めるべきは<strong>「相手にとって、自分がどういう存在になりたいか」</strong>。親友なのか、ちょっと先を行く先輩なのか、頼れる相談相手なのか。このポジションが、毎日の会話のトーンを決める。</p>
+<div class="key">親しみは、毎日投稿でしか積めない。やるのは発信じゃなく<strong>コミュニケーション</strong>——気を遣う・承認する・気配りする・共感する・聞く。1日1つでいい。1週間〜1ヶ月かけて、ゆっくり親しくなる。</div>
+
+<h2><span class="s">2</span>「発信」と「会話」はこう違う</h2>
+<table>
+<tr><th></th><th>✗ 発信（視聴者扱い）</th><th>○ 会話（友達扱い）</th></tr>
+<tr><td>立ち位置</td><td>マイクを持った司会者</td><td>隣の席の友達</td></tr>
+<tr><td>情報量</td><td>全部説明する</td><td>「これ見て」まで削る</td></tr>
+<tr><td>主役</td><td>自分</td><td>相手</td></tr>
+<tr><td>伝え方</td><td>抽象・正論</td><td>具体・自己開示</td></tr>
+<tr><td>ゴール</td><td>その場の反応</td><td>関係（また話したい）</td></tr>
+</table>
+<p>この表の右側に全部寄せる。それだけで、同じネタでも刺さり方が変わる。</p>
+
+<h2><span class="s">3</span>会話に変える9つの原則</h2>
+<p>どのジャンルでも同じだ。1つずつ、悪い例（発信）と良い例（会話）で見せる。</p>
+
+<h4>① 説明するな、削れ</h4>
+<div class="bad"><b>✗ 発信</b>「話題の〇〇に合わせて、私の△△時代のあるあるを話してみたけど、共感してくれる人いる？」</div>
+<div class="good"><b>○ 会話</b>「△△時代の私、まじこれ」（動画を貼る）</div>
+<p>説明しすぎると<strong>ツッコミどころ（余白）が消えて、コメントが来ない</strong>。友達に動画を見せる時は「これ見て」しか言わない。それくらいまで削る。</p>
+
+<h4>② 読者を主人公にしろ</h4>
+<p>余白があるから、見る側が<strong>勝手に自分の話として読む</strong>。「あー私のことだ」「私は違うけど今これだわ」と、各自が主人公になる。説明し切ると"あなたの話"で終わって、他人事になる。</p>
+
+<h4>③ 抽象を具体に</h4>
+<div class="vs"><div class="l"><div class="t">✗ 抽象</div>「冗談じゃないくらい大変」</div><div class="r"><div class="t">○ 具体</div>「毎日ケーキ爆食いしないと保たないレベルで大変」</div></div>
+<p>画が浮かぶと共感が起きる。抽象は流される。情景や行動で"見える"ようにする。</p>
+
+<h4>④ 正論より自己開示（価値観で共感させる）</h4>
+<div class="bad"><b>✗ 発信</b>「悩んだら一人で抱えないで。なんでも相談してね」（正論・上から）</div>
+<div class="good"><b>○ 会話</b>「前は考えすぎて病みかけてたけど、考えすぎないようにしたら楽になったわ」（自己開示）</div>
+<p>人が欲しいのは正論じゃなく共感。<strong>自分の弱さ・本音・価値観をさらけ出す</strong>から「わかる」「私も」が湧く。気づきは"教え"じゃなく"自己開示"の形で出す。</p>
+
+<h4>⑤ 言葉でターゲットを管理する</h4>
+<p>たった1語で、来てほしい人を呼び、引いてほしい誤解を消せる。たとえば「今も△△で大変」と書くと、憧れて見てる人が「この人の世界に行っても大変なのか」と引く。「△△だった時も、今も思うけど」に変えると、"今は違うステージにいる"と暗に伝わる。<strong>誰に向けて書くかを、言葉選びで操作する。</strong></p>
+
+<h4>⑥ 見せられるものは見せる</h4>
+<p>動画は説明せずサムネを貼る。証拠は語らずスクショを貼る。<strong>文字で説明した時点で野暮になる。</strong>見れば分かるものは、見せる。</p>
+
+<h4>⑦ 選ばせる時は絞る</h4>
+<div class="vs"><div class="l"><div class="t">✗ 多すぎ</div>「悩みでも愚痴でも相談でも、なんでも送って」</div><div class="r"><div class="t">○ 絞る</div>「この3つのうち1つ、送って」</div></div>
+<p>人は選択肢が多いと選べない。<strong>狭く・少なく示す方が動く。</strong></p>
+
+<h4>⑧ 締めにキャラを残す</h4>
+<p>最後に自虐やボケを一言足す。「これを機に〇〇始めようかと」「私を成仏させてくれ…」。<strong>"いい人"より"面白い友達"が惚れられる。</strong>余韻とキャラが「また見たい」を作る。</p>
+
+<h4>⑨ ゴールは「反応」じゃなく「関係」</h4>
+<p>質問箱やスタンプで終わらせない。最終的に<strong>「何かあったら、この人に相談していいんだ」</strong>と思ってもらう導線にする。単発の反応より、続く関係。これが——次の販売（ローンチ）の土台になる。</p>
+
+<h2><span class="s">4</span>どんなアカウントでも使える型</h2>
+<p>ジャンルが美容でも子育てでもお金でも筋トレでも、会話ストーリーの骨格は同じだ。</p>
+<div class="grp"><div class="gh">会話ストーリーの5ステップ</div><div class="gb">
+<div class="rule"><span class="rn">① ネタ</span> 共通の体験・流行・あるあるから入る<span class="gb2">「みんなも経験あるよね」の入口</span></div>
+<div class="rule"><span class="rn">② 自己開示</span> 自分の本音・失敗・価値観を見せる<span class="gb2">正論でなく「私はこう思う／こうだった」</span></div>
+<div class="rule"><span class="rn">③ 余白</span> 説明しすぎない・言い切らない<span class="gb2">読者が入る隙を残す</span></div>
+<div class="rule"><span class="rn">④ 巻き込み</span> 共感で「私も！」を引き出す<span class="gb2">絞った問いかけで参加させる</span></div>
+<div class="rule"><span class="rn">⑤ 関係導線</span> 「また話したい・相談したい」へつなぐ<span class="gb2">単発で終わらせない</span></div>
+</div></div>
+
+<h4>ジャンル別の入り口（例）</h4>
+<div class="tc"><div class="hd">美容</div><div class="bd">「30代の私、まじこれ」→ 鏡を見てため息ついた朝の話 →「同じ人いる？」</div></div>
+<div class="tc"><div class="hd">子育て</div><div class="bd">「昨日、本気でやらかした」→ つい怒鳴った自己開示 →「みんなはどうしてる？」</div></div>
+<div class="tc"><div class="hd">お金・働き方</div><div class="bd">「給料日なのに、もう財布が軽い」→ 昔の自分の失敗 →「同じ過ちした人、一緒に成仏しよ」</div></div>
+
+<div class="warn">どのジャンルでも禁止なのは「先生になること」。教えよう・正そうとした瞬間、会話は発信に戻る。<b>常に"隣の友達"の目線でいる。</b></div>
+
+<h2><span class="s">5</span>検品：発信になってないか</h2>
+<div class="check"><ul>
+<li>司会者になってないか？（隣の友達の口調か）</li>
+<li>説明しすぎてないか？（「これ見て」まで削れるか）</li>
+<li>主役は読者か？（自分の話で終わってないか）</li>
+<li>正論を押し付けてないか？（自己開示になってるか）</li>
+<li>余白はあるか？（読者が「私も」と入れる隙があるか）</li>
+<li>ゴールは関係づくりか？（単発の反応で終わってないか）</li>
+</ul></div>
+<div class="end">ストーリーで物を売るな。<strong>友達になれ。</strong><br>物は、友達になった後に勝手に売れる。</div>
 </div>
   `,
 
