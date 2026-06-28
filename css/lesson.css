@@ -10,7 +10,7 @@
   --ink:#2d3748; --muted:#718096; --line:#cbd5e0;
   --accent:#b83280; --ng:#c0392b; --ngbg:#fdf3f2;
   --exbg:#f1f8f4; --ex:#2f855a; --gold:#b7791f; --goldbg:#fffaf0;
-  color:#33404f; line-height:2.0; font-size:15.5px;
+  color:#33404f; line-height:2.05; font-size:16.5px;
   font-family:-apple-system,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
   letter-spacing:0.01em;
 }
@@ -37,7 +37,7 @@
 .lesson .what{ background:var(--blue5); border:1px solid var(--blue4); border-radius:12px; padding:14px 16px; margin:14px 0; }
 .lesson .what .h{ font-weight:bold; color:var(--navy); margin-bottom:6px; }
 .lesson .what ul{ margin:0; padding-left:18px; }
-.lesson .what li{ margin:3px 0; font-size:14px; }
+.lesson .what li{ margin:6px 0; font-size:15px; line-height:1.75; }
 
 /* headings */
 .lesson h2{ font-size:18.5px; color:#fff; background:var(--navy); border-radius:9px; padding:11px 14px; margin:40px 0 16px; border:0; font-weight:700; line-height:1.45; }
@@ -87,7 +87,7 @@
 .lesson .rule .gb2{ color:var(--muted); font-size:12.5px; display:block; margin-top:2px; }
 
 /* table */
-.lesson table{ border-collapse:collapse; width:100%; margin:9px 0; font-size:13px; }
+.lesson table{ border-collapse:collapse; width:100%; margin:9px 0; font-size:13.5px; }
 .lesson th,.lesson td{ border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
 .lesson th{ background:var(--blue); color:#fff; }
 

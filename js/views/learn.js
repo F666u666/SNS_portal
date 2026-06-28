@@ -96,18 +96,6 @@ export function renderChapter(chapterId) {
     h('h2', { class: 'section__title', style: { marginTop: '4px', marginBottom: '8px' } }, [c.title]),
     h('p', { class: 'card__lede' }, [`目安 ${c.estMin} 分　・　${phase.title}`]),
 
-    // Chapter intro box
-    h('div', { class: 'chapter-intro', style: { marginTop: '20px' } }, [
-      h('div', { class: 'chapter-intro__row' }, [
-        h('span', { class: 'chapter-intro__label' }, ['この章で']),
-        h('span', { class: 'chapter-intro__value', html: `<strong>${c.title}</strong> の核を1章で掴む。` }),
-      ]),
-      h('div', { class: 'chapter-intro__row' }, [
-        h('span', { class: 'chapter-intro__label' }, ['読了目安']),
-        h('span', { class: 'chapter-intro__value' }, [`${c.estMin} 分`]),
-      ]),
-    ]),
-
     // Video slot (set c.videoUrl later to embed)
     h('div', { class: 'video-slot' },
       c.videoUrl
