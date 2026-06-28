@@ -36,6 +36,21 @@ export function renderHome() {
       ]),
     ]),
 
+    // この教材の使い方（動線）
+    h('section', { class: 'section' }, [
+      h('div', { class: 'howto' }, [
+        h('div', { class: 'howto__title' }, ['📖 この教材の使い方']),
+        h('p', { class: 'howto__lede' }, ['渡されて終わり、見て終わりが一番もったいない。下の4ステップを毎日回せば、必ず力になる。']),
+        h('div', { class: 'howto__steps' }, [
+          h('div', { class: 'howto__step' }, [h('span', { class: 'howto__n' }, ['1']), h('span', {}, ['1日1章 読む']) ]),
+          h('div', { class: 'howto__step' }, [h('span', { class: 'howto__n' }, ['2']), h('span', {}, ['解説動画を見る（順次追加）']) ]),
+          h('div', { class: 'howto__step' }, [h('span', { class: 'howto__n' }, ['3']), h('span', {}, ['章末メモを1つ書く']) ]),
+          h('div', { class: 'howto__step' }, [h('span', { class: 'howto__n' }, ['4']), h('span', {}, ['スクショして提出（DM）']) ]),
+        ]),
+        h('p', { class: 'howto__note' }, ['※ 提出する前提で読むと、頭への残り方が変わる。']),
+      ]),
+    ]),
+
     // Stats
     h('section', { class: 'section' }, [
       h('div', { class: 'stat-grid' }, [

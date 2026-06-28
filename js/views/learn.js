@@ -108,12 +108,28 @@ export function renderChapter(chapterId) {
       ]),
     ]),
 
+    // Video slot (set c.videoUrl later to embed)
+    h('div', { class: 'video-slot' },
+      c.videoUrl
+        ? [ h('div', { class: 'video-embed', html: `<iframe src="${c.videoUrl}" title="解説動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }) ]
+        : [ h('div', { class: 'video-pending' }, [
+            h('span', { class: 'video-pending__icon' }, ['🎬']),
+            h('div', {}, [
+              h('div', { class: 'video-pending__t' }, ['解説動画は準備中']),
+              h('div', { class: 'video-pending__s' }, ['公開されたらここに表示されます。まずは本文を読もう']),
+            ]),
+          ]) ]
+    ),
+
     // Body: rich prose if available, else placeholder
     CHAPTER_BODIES[c.id]
       ? h('article', { class: 'prose', style: { marginTop: '20px' }, html: CHAPTER_BODIES[c.id] })
       : h('div', { class: 'card card--soft', style: { marginTop: '20px' } }, [
           h('p', { class: 'card__lede' }, ['この章の本文は準備中です。']),
         ]),
+
+    // この章のメモ（書き出し動線）
+    renderChapterMemo(c),
 
     // Done toggle
     h('section', { class: 'section', style: { marginTop: '24px' } }, [
@@ -144,4 +160,27 @@ export function renderChapter(chapterId) {
   });
 
   return view;
+}
+
+// ── この章のメモ（端末に保存。書き出し＝動線の要） ──
+function renderChapterMemo(c) {
+  const key = 'snsRoadmap:memo:' + c.id;
+  let saved = '';
+  try { saved = localStorage.getItem(key) || ''; } catch {}
+  const ta = h('textarea', { class: 'memo__ta', placeholder: '例：一番刺さった一言／明日やること を1つだけ', maxlength: 2000 });
+  ta.value = saved;
+  const status = h('span', { class: 'memo__status' }, [saved ? '保存済み' : '']);
+  ta.addEventListener('input', () => { status.textContent = ''; });
+  const save = () => {
+    try { localStorage.setItem(key, ta.value); } catch {}
+    status.textContent = '保存しました ✓';
+    toast('メモを保存しました');
+  };
+  return h('section', { class: 'section memo' }, [
+    h('h3', { class: 'card__title', style: { marginBottom: '6px' } }, ['✍️ この章のメモ（1つでいい）']),
+    h('p', { class: 'card__lede', style: { marginBottom: '10px' } }, ['見て終わりにしない。心に残った1つ、または明日やることを書こう。書くと記憶に残る。']),
+    ta,
+    h('div', { class: 'memo__bar' }, [status, h('button', { type: 'button', class: 'btn btn--sm', onclick: save }, ['保存'])]),
+    h('p', { class: 'memo__submit' }, ['📨 書いたら、スクショして提出（DM）。出す前提で読むと完走できる。']),
+  ]);
 }
