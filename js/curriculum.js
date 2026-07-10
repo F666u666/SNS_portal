@@ -63,7 +63,6 @@ export const CHAPTERS = [
 export const CHAPTER_BODIES = {
   'p1-genre': `
 <div class="lesson">
-<div class="sensei-intro"><svg class="sensei-ic"><use href="#sensei"/></svg><div class="say">いっしょに「ジャンル選び」を決めよう。ここが全部の土台だよ。</div></div>
 <div class="what"><div class="h">📍 この章でわかること</div><ul>
 <li>SNSの失敗は、走り出す前の「ジャンル選び」でほぼ決まる</li>
 <li>今は「人」じゃなく「ジャンル」でフォローされる、その仕組み</li>
@@ -92,7 +91,6 @@ export const CHAPTER_BODIES = {
 </div>
 
 <div class="key">失敗はたいてい同じ場所に集まる。<strong>「ジャンルを間違えた」か「コンセプトが弱い」か、どっちかだ。</strong>ここさえ外さなければ、最初の数本から手応えが出る。だからこの章を「設計する」の一番最初に置いてある。</div>
-<div class="sensei-tip"><svg class="sensei-ic"><use href="#sensei"/></svg><div class="bubble"><span class="lab">先生のヒント</span>むずかしく考えなくていい。<b>「誰の悩みに届けるか」</b>を決めるだけ。それがジャンルだよ。</div></div>
 
 <h3>見る側は、あなたのカメラを見ていない</h3>
 <div class="vfig">
