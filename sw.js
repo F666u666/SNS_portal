@@ -5,7 +5,7 @@
 // Bump CACHE_VERSION whenever shipping a new version.
 // ============================================================
 
-const CACHE_VERSION = 'v3-2026-06-14';
+const CACHE_VERSION = 'v4-2026-07-10';
 const APP_SHELL_CACHE = `sns-roadmap-shell-${CACHE_VERSION}`;
 const DYNAMIC_CACHE   = `sns-roadmap-dyn-${CACHE_VERSION}`;
 
@@ -17,6 +17,7 @@ const APP_SHELL = [
   './css/components.css',
   './css/app.css',
   './css/lesson.css',
+  './css/article.css',
   './js/app.js',
   './js/storage.js',
   './js/router.js',
@@ -25,6 +26,9 @@ const APP_SHELL = [
   './js/curriculum.js',
   './js/views/home.js',
   './js/views/learn.js',
+  './js/article.js',
+  './js/articles/index.js',
+  './js/articles/p1-genre.js',
   './manifest.json',
   './assets/icons/icon-192.svg',
   './assets/icons/icon-512.svg',

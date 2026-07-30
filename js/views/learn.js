@@ -5,6 +5,8 @@
 import { PHASES, CHAPTERS, CHAPTER_BODIES, chaptersByPhase, getChapter, nextChapter, getPhase } from '../curriculum.js';
 import { reads } from '../models.js';
 import { h, toast } from '../ui.js';
+import { ARTICLES } from '../articles/index.js';
+import { renderArticle, renderArticleNav } from '../article.js';
 
 export function renderLearnIndex() {
   return h('section', { class: 'view' }, [
@@ -85,8 +87,59 @@ export function renderChapter(chapterId) {
   const phase = getPhase(c.phaseId);
   const done = reads.isDone(c.id);
   const next = nextChapter(c.id);
+  const idx = CHAPTERS.findIndex(x => x.id === c.id);
+  const prev = idx > 0 ? CHAPTERS[idx - 1] : null;
 
-  const view = h('section', { class: 'view' }, [
+  // ブログ型の記事データがあれば、新テンプレートで描画
+  const article = ARTICLES[c.id];
+  const view = article
+    ? h('section', { class: 'view' }, [
+        h('div', { class: 'read-progress' }, [
+          h('div', { class: 'read-progress__fill', id: 'read-progress-fill' }),
+        ]),
+        renderArticle(article, {
+          chapter: c, phase, prev, next,
+          footer: renderArticleFooter(c, done, next, prev),
+        }),
+      ])
+    : renderLegacyChapter(c, phase, done, next);
+
+  // Attach scroll listener for reading progress
+  requestAnimationFrame(() => {
+    const fill = document.getElementById('read-progress-fill');
+    if (!fill) return;
+    const onScroll = () => {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH > 0 ? Math.min(100, Math.max(0, (window.scrollY / docH) * 100)) : 0;
+      fill.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  });
+
+  return view;
+}
+
+// ── 記事下：読了ボタン ＋ メモ ＋ 前後リンク ──
+function renderArticleFooter(c, done, next, prev) {
+  return h('div', { class: 'a-foot' }, [
+    h('button', {
+      type: 'button',
+      class: `btn ${done ? 'btn--secondary' : ''} btn--block`,
+      onclick: () => {
+        reads.markDone(c.id, !done);
+        toast(done ? '読了を取り消しました' : '読了マークしました ✓');
+        location.hash = next ? `#/learn/${next.id}` : `#/phase/${c.phaseId}`;
+      },
+    }, [done ? '読了を取り消す' : '読了にする ✓']),
+    renderChapterMemo(c),
+    renderArticleNav(prev, next),
+  ]);
+}
+
+// ── 従来表示（記事データ未整備の章） ──
+function renderLegacyChapter(c, phase, done, next) {
+  return h('section', { class: 'view' }, [
     h('a', { class: 'btn btn--ghost btn--sm', href: `#/phase/${c.phaseId}`, style: { marginBottom: '12px' } }, [`← ${phase.title}`]),
     // Reading progress bar
     h('div', { class: 'read-progress' }, [
@@ -133,21 +186,6 @@ export function renderChapter(chapterId) {
       next ? h('a', { class: 'btn btn--ghost btn--block', href: `#/learn/${next.id}`, style: { marginTop: '8px' } }, [`次の章「${next.title}」 →`]) : null,
     ]),
   ]);
-
-  // Attach scroll listener for reading progress
-  requestAnimationFrame(() => {
-    const fill = document.getElementById('read-progress-fill');
-    if (!fill) return;
-    const onScroll = () => {
-      const docH = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = docH > 0 ? Math.min(100, Math.max(0, (window.scrollY / docH) * 100)) : 0;
-      fill.style.width = pct + '%';
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  });
-
-  return view;
 }
 
 // ── この章のメモ（端末に保存。書き出し＝動線の要） ──
