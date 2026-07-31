@@ -5,7 +5,7 @@
 // Bump CACHE_VERSION whenever shipping a new version.
 // ============================================================
 
-const CACHE_VERSION = 'v4-2026-07-10';
+const CACHE_VERSION = 'v5-2026-07-30';
 const APP_SHELL_CACHE = `sns-roadmap-shell-${CACHE_VERSION}`;
 const DYNAMIC_CACHE   = `sns-roadmap-dyn-${CACHE_VERSION}`;
 
@@ -28,7 +28,40 @@ const APP_SHELL = [
   './js/views/learn.js',
   './js/article.js',
   './js/articles/index.js',
+  './js/articles/p1-axis.js',
+  './js/articles/p1-bench.js',
   './js/articles/p1-genre.js',
+  './js/articles/p1-harm.js',
+  './js/articles/p1-profile.js',
+  './js/articles/p1-stocktake.js',
+  './js/articles/p2-algo.js',
+  './js/articles/p2-ana.js',
+  './js/articles/p2-basics.js',
+  './js/articles/p2-buzz.js',
+  './js/articles/p2-capcut.js',
+  './js/articles/p2-pre.js',
+  './js/articles/p2-templates.js',
+  './js/articles/p3-cautions.js',
+  './js/articles/p3-conversation.js',
+  './js/articles/p3-feed-vs-story.js',
+  './js/articles/p3-ideas.js',
+  './js/articles/p3-mind.js',
+  './js/articles/p3-monetize.js',
+  './js/articles/p3-seven.js',
+  './js/articles/p3-writing.js',
+  './js/articles/p4-cross.js',
+  './js/articles/p4-kpi.js',
+  './js/articles/p4-mix.js',
+  './js/articles/p4-product.js',
+  './js/articles/p4-story-design.js',
+  './js/articles/p5-close.js',
+  './js/articles/p5-highticket.js',
+  './js/articles/p5-letter.js',
+  './js/articles/p5-list.js',
+  './js/articles/p5-overview.js',
+  './js/articles/p5-product.js',
+  './js/articles/p5-story.js',
+  './js/articles/p5-target.js',
   './manifest.json',
   './assets/icons/icon-192.svg',
   './assets/icons/icon-512.svg',
