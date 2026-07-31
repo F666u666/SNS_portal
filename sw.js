@@ -5,7 +5,7 @@
 // Bump CACHE_VERSION whenever shipping a new version.
 // ============================================================
 
-const CACHE_VERSION = 'v5-2026-07-30';
+const CACHE_VERSION = 'v10-2026-07-31';
 const APP_SHELL_CACHE = `sns-roadmap-shell-${CACHE_VERSION}`;
 const DYNAMIC_CACHE   = `sns-roadmap-dyn-${CACHE_VERSION}`;
 
@@ -65,6 +65,8 @@ const APP_SHELL = [
   './manifest.json',
   './assets/icons/icon-192.svg',
   './assets/icons/icon-512.svg',
+  './assets/illustrations/mascot-poses-sheet.png',
+  './assets/illustrations/mascot-poses-12.png',
 ];
 
 // ── Install: pre-cache app shell (for offline) ──

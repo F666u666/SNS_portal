@@ -61,7 +61,7 @@ export function renderPhase(phaseId) {
 function renderChapterRow(c) {
   const done = reads.isDone(c.id);
   return h('a', { class: `chapter ${done ? 'chapter--done' : ''}`, href: `#/learn/${c.id}` }, [
-    h('span', { class: 'chapter__index' }, [done ? '✓' : c.n]),
+    renderChapterThumb(c, done),
     h('div', { class: 'chapter__main' }, [
       h('div', { class: 'chapter__title' }, [c.title]),
       h('div', { class: 'chapter__meta' }, [
@@ -70,6 +70,18 @@ function renderChapterRow(c) {
       ]),
     ]),
     h('span', { class: 'chapter__arrow', html: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg>' }),
+  ]);
+}
+
+function renderChapterThumb(c, done) {
+  const topic = c.id.split('-').slice(1).join('-');
+  return h('span', { class: `chapter__thumb chapter__thumb--${topic}${done ? ' is-done' : ''}`, 'aria-hidden': 'true' }, [
+    h('span', { class: 'chapter__thumb-bg' }, []),
+    h('span', { class: 'chapter__thumb-mark' }, [done ? '✓' : c.n]),
+    h('span', { class: 'chapter__thumb-line chapter__thumb-line--one' }, []),
+    h('span', { class: 'chapter__thumb-line chapter__thumb-line--two' }, []),
+    h('span', { class: 'chapter__thumb-dot chapter__thumb-dot--one' }, []),
+    h('span', { class: 'chapter__thumb-dot chapter__thumb-dot--two' }, []),
   ]);
 }
 
